@@ -1026,7 +1026,7 @@ a.orange:active .baskets {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 105;
+    z-index: 110;
     text-align: center;
     overflow: auto;
     display: none;
