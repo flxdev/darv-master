@@ -1456,26 +1456,26 @@ a.orange:active .baskets {
     position: relative;
 }
 
-.navigation nav > ul > li:first-child {
+.navigation nav > ul li:first-child {
     border-left: none;
     width: 120px;
 }
-.navigation nav > ul > li:nth-child(2) {
+.navigation nav > ul li:nth-child(2) {
     width: 203px;
 }
-.navigation nav > ul > li:nth-child(3) {
+.navigation nav > ul li:nth-child(3) {
     width: 170px;
 }
-.navigation nav > ul > li:nth-child(4) {
+.navigation nav > ul li:nth-child(4) {
     width: 210px;
 }
-.navigation nav > ul > li:nth-child(5) {
+.navigation nav > ul li:nth-child(5) {
     width: 173px;
 }
-.navigation nav > ul > li:last-child {
+.navigation nav > ul li:last-child {
     width: 184px;
 }
-.navigation nav > ul > li > a {
+.navigation nav > ul li > a {
     font-family: 'museosanscyrl_500', Arial, sans-serif;
     font-size: 16px;
     color: #0068b3;
@@ -1489,7 +1489,7 @@ a.orange:active .baskets {
     transition: background 0.3s ease, color 0.3s ease;
     position: relative;
 }
-.navigation nav > ul > li > a::after {
+.navigation nav > ul li > a::after {
     background: #ffffff;
     bottom: 0;
     content: "";
@@ -1502,15 +1502,15 @@ a.orange:active .baskets {
     -o-transition: background 0.3s ease;
     transition: background 0.3s ease;
 }
-.navigation nav > ul > li:hover > a::after {
+.navigation nav > ul li:hover > a::after {
     background: #f28d1e;
     z-index: 102;
 }
-.navigation nav > ul > li:hover > a{
+.navigation nav > ul li:hover > a{
     background: #f28d1e;
     color: #ffffff;
 }
-.navigation nav > ul > li.active > a::before {
+.navigation nav > ul li.active > a::before {
     content: '';
     border-bottom: 4px solid #f28d1e;
     position: absolute;
@@ -1518,14 +1518,14 @@ a.orange:active .baskets {
     right: -1px;
     left: -1px;
 }
-.navigation nav > ul > li > a span {
+.navigation nav > ul li > a span {
     display: table-cell;
     height: 100%;
     width: 100%;
     vertical-align: middle;
     line-height: 1.3;
 }
-.navigation nav > ul > li > a .icon__list {
+.navigation nav > ul li > a .icon__list {
     width: 18px;
     height: 18px;
     border-radius: 100%;
@@ -1539,7 +1539,7 @@ a.orange:active .baskets {
     -o-transition: border-color 0.3s ease;
     transition: border-color 0.3s ease;
 }
-.navigation nav > ul > li > a .icon__list:after {
+.navigation nav > ul li > a .icon__list:after {
     content: "";
     position: absolute;
     top: 50%;
@@ -1558,11 +1558,11 @@ a.orange:active .baskets {
     -o-transition: border-color 0.3s ease;
     transition: border-color 0.3s ease;
 }
-.navigation nav > ul > li:hover >  a .icon__list:after {
+.navigation nav > ul li:hover >  a .icon__list:after {
     border-width: 0 2.5px 4px 2.5px;
     border-color: transparent transparent #ffffff transparent;
 }
-.navigation nav > ul > li:hover > a .icon__list {
+.navigation nav > ul li:hover > a .icon__list {
     border-color: rgba(255, 255, 255, 0.5);
 }
 .navigation .menu {
@@ -1571,19 +1571,19 @@ a.orange:active .baskets {
     width: 100%;
     text-align: center;
 }
-.navigation nav > ul > li > .menu span {
+.navigation nav > ul li > .menu span {
     display: inline-block;
     vertical-align: middle;
     position: relative;
     width: auto;
     height: auto;
 }
-.navigation nav > ul > li > .menu .lines {
+.navigation nav > ul li > .menu .lines {
     height: 14px;
     width: 20px;
     margin-right: 8px;
 }
-.navigation nav > ul > li > .menu .lines span {
+.navigation nav > ul li > .menu .lines span {
     width: 100%;
     height: 2px;
     background: #f28d1e;
@@ -1596,8 +1596,8 @@ a.orange:active .baskets {
     -o-transition: background 0.3s ease;
     transition: background 0.3s ease;
 }
-.navigation nav > ul > li > .menu .lines span::after,
-.navigation nav > ul > li > .menu .lines span::before {
+.navigation nav > ul li > .menu .lines span::after,
+.navigation nav > ul li > .menu .lines span::before {
     content: "";
     background: #f28d1e;
     position: absolute;
@@ -1615,9 +1615,9 @@ a.orange:active .baskets {
 .navigation .menu .lines span::before {
     bottom: -5px;
 }
-.navigation nav > ul > li:hover > a .lines span,
-.navigation nav > ul > li:hover > a .lines span::after,
-.navigation nav > ul > li:hover > a .lines span::before {
+.navigation nav > ul li:hover > a .lines span,
+.navigation nav > ul li:hover > a .lines span::after,
+.navigation nav > ul li:hover > a .lines span::before {
     background: #fff;
 }
  .navigation.menu .text__btn {
@@ -1643,10 +1643,10 @@ a.orange:active .baskets {
     box-shadow:         0px 3px 15px 0px rgba(0, 0, 0, 0.28);
     max-height: 475px;
 }
-.navigation nav > ul > li:nth-child(5) .drop__box,
-.navigation nav > ul > li:nth-child(5) .drop__box .drop__box-inner,
-.navigation nav > ul > li:nth-child(6) .drop__box,
-.navigation nav > ul > li:nth-child(6) .drop__box .drop__box-inner {
+.navigation nav > ul li:nth-child(5) .drop__box,
+.navigation nav > ul li:nth-child(5) .drop__box .drop__box-inner,
+.navigation nav > ul li:nth-child(6) .drop__box,
+.navigation nav > ul li:nth-child(6) .drop__box .drop__box-inner {
     right: 0;
     left: auto;
 }
@@ -1779,22 +1779,22 @@ a.orange:active .baskets {
         font-size: 13px;
         padding: 0 5px 0 10px;
     }
-    .navigation nav > ul > li:first-child {
+    .navigation nav > ul li:first-child {
         width: 113px;
     }
-    .navigation nav > ul > li:nth-child(2) {
+    .navigation nav > ul li:nth-child(2) {
         width: 152px;
     }
-    .navigation nav > ul > li:nth-child(3) {
+    .navigation nav > ul li:nth-child(3) {
         width: 128px;
     }
-    .navigation nav > ul > li:nth-child(4) {
+    .navigation nav > ul li:nth-child(4) {
         width: 166px;
     }
-    .navigation nav > ul > li:nth-child(5) {
+    .navigation nav > ul li:nth-child(5) {
         width: 120px;
     }
-    .navigation nav > ul > li:last-child {
+    .navigation nav > ul li:last-child {
         width: 144px;
     }
     .navigation .basket .enter {
@@ -1818,7 +1818,7 @@ a.orange:active .baskets {
     .menu__item.card_box {
         padding-left: 10px;
     }
-    .navigation nav > ul > li > a .icon__list {
+    .navigation nav > ul li > a .icon__list {
         margin-top: -3px;
     }
     .el_products li {
