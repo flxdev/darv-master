@@ -217,22 +217,20 @@ $(document).ready(function () {
 	//DROP DOWN MENU
 	function dropdown() {
 		var $menu = $('.navigation').find('nav > ul'),
-			$items = $menu.find('> li'),
+			$items = $menu.find('.point'),
 			$delay = 0;
 
 		$items.each(function(){
+			console.log($(this))
 			var $this = $(this),
 				$link = $this.find('> a');
 
 			$this.bind('mouseenter', function(){
-				$menu.find('.drop__box').stop(true,true).hide();
-				$link.stop().animate(300, function(){
-					$this.find('.drop__box')
-						.delay($delay)
-						.slideDown(0)
-				});
+				$this.addClass('olo');
+				$(this).find('.drop__box').stop(true,true).fadeIn();
 			}).bind('mouseleave', function(){
-				$this.find('.drop__box').stop(true,true).hide();
+				$this.removeClass('olo');
+				$(this).find('.drop__box').stop(true,true).hide();
 			});
 		})
 	};

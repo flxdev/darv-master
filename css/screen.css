@@ -1456,23 +1456,44 @@ a.orange:active .baskets {
     position: relative;
 }
 
-.navigation nav > ul li:first-child {
+.navigation nav > ul > li:first-child {
     border-left: none;
     width: 120px;
 }
-.navigation nav > ul li:nth-child(2) {
+.navigation nav > ul > li:nth-child(2) {
     width: 203px;
 }
-.navigation nav > ul li:nth-child(3) {
+.navigation nav > ul > li:nth-child(3) {
     width: 170px;
 }
-.navigation nav > ul li:nth-child(4) {
+.navigation nav > ul > li:nth-child(4) {
     width: 210px;
 }
-.navigation nav > ul li:nth-child(5) {
+.navigation nav > ul > li:nth-child(5) {
     width: 173px;
 }
-.navigation nav > ul li:last-child {
+.navigation nav > ul > li:last-child {
+    width: 184px;
+}
+.navigation nav > ul > div li {
+    display: table-cell;
+    border-left: 1px solid #d5dde3;
+    position: relative;
+}
+.navigation nav > ul > div li:nth-child(1) {
+    width: 203px;
+    border-left: 1px solid #d5dde3;
+}
+.navigation nav > ul > div li:nth-child(2) {
+    width: 170px;
+}
+.navigation nav > ul > div li:nth-child(3) {
+    width: 210px;
+}
+.navigation nav > ul > div li:nth-child(4) {
+    width: 173px;
+}
+.navigation nav > ul > div li:last-child {
     width: 184px;
 }
 .navigation nav > ul li > a {
@@ -1660,6 +1681,9 @@ a.orange:active .baskets {
     min-width: 186px;
     padding-right: 0;
 }
+.navigation nav > ul li:first-child .menu__item {
+    padding-right: 22px;
+}
 .menu__item a {
     margin-bottom: 24px;
     display: inline-block;
@@ -1795,6 +1819,21 @@ a.orange:active .baskets {
         width: 120px;
     }
     .navigation nav > ul li:last-child {
+        width: 144px;
+    }
+    .navigation nav > ul > div li:nth-child(2) {
+        width: 152px;
+    }
+    .navigation nav > ul > div li:nth-child(3) {
+        width: 128px;
+    }
+    .navigation nav > ul > div li:nth-child(4) {
+        width: 166px;
+    }
+    .navigation nav > ul > div li:nth-child(5) {
+        width: 120px;
+    }
+    .navigation nav > ul > div li:last-child {
         width: 144px;
     }
     .navigation .basket .enter {
