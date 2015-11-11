@@ -1945,6 +1945,9 @@ a.orange:active .baskets {
     color: #fff;
 }
 .info__box .item_info:first-child {
+    margin-bottom: 0px;
+}
+.info__box .item_info:first-child:not(:only-of-type) {
     margin-bottom: 20px;
 }
 .item_category {
@@ -4878,13 +4881,13 @@ i.star {
 .info__long .item_info:first-child {    
     margin-bottom: 20px;
 }
-.info__long + .pagination,
+.news + .pagination,
 .article__case + .pagination {
     position: relative;
     margin: 20px -20px 0;
     top: 20px;
 }
-.info__long + .pagination::before,
+.news + .pagination::before,
 .article__case + .pagination::before {
     content: '';
     top: -20px;
@@ -4893,6 +4896,11 @@ i.star {
     right: -20px;
     height: 20px;
     position: absolute;
+}
+.news::after {
+    clear: both;
+    content: '';
+    display: table;
 }
 .cover {
     position: relative;
