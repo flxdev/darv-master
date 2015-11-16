@@ -1185,6 +1185,11 @@ a.orange:active .baskets {
     border-top-color: #d36e00;
     border-bottom-color: #e27d0e;
 }
+input.btn {
+    color: #ffffff;
+    font-family: "museo_sans_cyrl700",Arial,sans-serif;
+    font-size: 14px;
+}
 .input.error, textarea.error {
     border-color: #fd8787 !important;
     color: #fd8787 !important;
