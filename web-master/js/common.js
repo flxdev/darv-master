@@ -87,14 +87,34 @@ $(document).ready(function () {
 					val = max_number;
 					$(this).val(val);
 				}
-				if (val == '') {
+				if (val == '' || val < 0) {
 					val = 0;
 					$(this).val(val);
 				}
 			});
+			input[0].onkeypress = function(e) {
+				e = e || event;
+				if (e.ctrlKey || e.altKey || e.metaKey) return;
+				var chr = getChar(e);
+				if (chr == null) return;
+				if (chr < '0' || chr > '9') {
+					return false;
+				}
+			}
 		});
 	}
 	number();
+	function getChar(event) {
+		if (event.which == null) {
+			if (event.keyCode < 32) return null;
+			return String.fromCharCode(event.keyCode) // IE
+		}
+		if (event.which != 0 && event.charCode != 0) {
+			if (event.which < 32) return null;
+			return String.fromCharCode(event.which) 
+		}
+		return null;
+	}
 
 	//price
 
@@ -547,33 +567,13 @@ $(document).ready(function () {
 				filter_container.addClass('is-open');
 				this_.addClass('is-active').siblings().removeClass('is-active');
 			}
-			//var arr = $(this).data('list').split(';');
-		  
-
-			// if($(this).hasClass('is-active')){
-		 //    var inp = parent.find('.'+btn__link).find('input');
-		    
-		 //    inp.on('change', function(){
-		 //      var count = parent.find('.'+btn__link).find('input:checked').length;
-		 //      if(!count == 0) {
-		 //        this_.addClass('active');
-		 //      } else {
-		 //        this_.removeClass('active');
-		 //      }
-		 //      if(count === 0) {
-		 //      	this_.find('span').text(arr[0]);
-		 //      } else if(count === 1) {
-		 //      	this_.find('span').text(count + ' ' + arr[0]);
-		 //      } else if(count > 1 && count < 5 ) {
-		 //      	this_.find('span').text(count + ' ' + arr[1]);
-		 //      } else if(count > 4 ) {
-		 //      	this_.find('span').text(count + ' ' + arr[2]);
-		 //      }
-		 //    });
-		 //  }
 		});
 	};
 	initCheck();
+
+
+
+	var obj_check = {};
 	function developer(){
 		$.fn.hasAttr = function(name) {
 		  return this.attr(name) !== undefined;
@@ -585,7 +585,7 @@ $(document).ready(function () {
 				var dataList = _.data('list').split(';');
 						data = _.data('form-tab'),
 						dafaultName = _.data('default'),
-						input = $('.' + data).find('input');
+						input = $(this).parents('.js-filter').find('.' + data).find('input');
 
 
 				input.on('change', function(){
@@ -621,31 +621,78 @@ $(document).ready(function () {
 					_.find('span').text(dafaultName);
 				}
 			} else if(_.hasAttr('data-check')) {
-				var data = _.data('form-tab'),
-						dafaultName = _.data('default'),
-						input = $('.' + data).find('input');
-
-				input.on('change', function(){
-					var count = $(this).parents('.' + data).find('input:checked').length;
-					if(!count == 0) {
-		        _.addClass('active');
-		      } else {
-		        _.removeClass('active');
-		      }
+				_.on('click', function(){
+					obj_check = {};
 				});
-				if($('.' + data).find('input:checked').length > 0) {
-					_.addClass('active');
-					var count = $('.' + data).find('input:checked').length;
-				} else {
-					_.removeClass('active');
-					_.find('span').text(dafaultName);
-				}
-					
+				_.each(function(){
+					obj_check = {};
+					var data = $(this).data('form-tab'),
+							dafaultName = _.data('default'),
+							input = $(this).parents('.js-filter').find('.' + data).find('input');
 
+					input.each(function() {
+			      if($(this).is(':checked')) {
+			        var vals = $(this).val();
+			        obj_check[vals] = '';
+			        refreshValue(_);
+			      }
+	    		});
+						
+					input.on('change', function(){
+						//obj_check = {};
+						var count = $(this).parents('.' + data).find('input:checked').length;
+
+						if($(this).is(':checked')){
+							var vals = $(this).val();
+							obj_check[vals] = '';
+							 refreshValue(_);
+						} else {
+							deleteValue($(this).val());
+							refreshValue(_);
+						}
+						if(!count == 0) {
+			        _.addClass('active');
+			      } else {
+			        _.removeClass('active');
+			      }
+					});
+
+					if($('.' + data).find('input:checked').length > 0) {
+						_.addClass('active');
+						//var count = $('.' + data).find('input:checked').length;
+					} else {
+						_.removeClass('active');
+					}
+				});
 			}
 		});
 	};
 	developer();
+
+	function refreshValue(item) {
+		var container = $(item).find('span');
+		var str = '';
+		var valueDefault = $(item).data('default');
+
+		for (var name in obj_check) {
+			if (str === '') {
+				str += name;
+			} else {
+				str += ', ' + name;
+			}
+		}
+
+		if (Object.keys(obj_check).length === 0) {
+			container[0].innerHTML =  valueDefault;
+		} else {
+			container[0].innerHTML = valueDefault+ ': ' + str;
+		}
+		
+	};
+	//refreshValue($('.js-filter-btn'));
+	function deleteValue(vals) {
+		delete obj_check[vals];
+	}
 
 	$('.js-filter').on('click', function(event){
 		event.stopPropagation();
