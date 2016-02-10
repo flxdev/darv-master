@@ -1,5 +1,44 @@
 $(document).ready(function () {
 
+	//summ basket
+	function summItem() {
+   var box = $('.table__basket-bottom'),
+      item = box.find('.js-price-text'),
+      arr = [];
+
+	  item.each(function(){
+	    var _ = $(this),
+	        val = _.text(),
+	        rep = val.replace(/ /g, '');
+	        arr.push(parseInt(rep))
+	  });
+
+	   var result = arr.reduce(function(sum, current) {
+	   	//console.log(sum, current)
+	    return sum + current;
+	    
+	  }, 0);
+	  //console.log(arr)
+	  
+	  box.parents('.content').find('.card__basket .item_search-price').text(result);
+	  
+	  box.parents('.content').find('.card__basket .item_search-price').map(function(){
+	    $(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + ' руб.');
+	  })
+	}
+	summItem();
+
+	$('.js-plus-number').add('.js-minus-number').on('click', function(){
+		setTimeout(function(){
+			summItem();
+		},10)
+	});
+	$('.js-price-input').on('change', function(){
+		setTimeout(function(){
+			summItem();
+		},10)
+	});
+
 	//auto height
 	 //$('.items .card__item').equalHeight();
 	$('.js-slider, .js-slider-arrivals').on('init', function(){
@@ -78,6 +117,9 @@ $(document).ready(function () {
 					val -= 1;
 					input.val(val);
 				};
+				if(val === 0) {
+					return false
+				}
 				input.trigger('change');
 				return false;
 			});
@@ -118,12 +160,15 @@ $(document).ready(function () {
 
 	//price
 
-		$('.js-price').each(function(){
+		$('.js-price').each(function(){			
 			$(this).find('.js-price-input').on('change', function(){
-				$(this).parents('.js-price').find('.js-price-text').text($(this).val()*$(this).parents('.js-price').find('.js-price-text').data('price'));
-				
-				if( $(this).val() === 0) {
+				var inVal = $(this).val();
+				if(inVal === '0') {
+					console.log(true)
 					$(this).parents('.js-price').find('.js-price-text').text($(this).parents('.js-price').find('.js-price-text').data('price'));
+					
+				} else {
+					$(this).parents('.js-price').find('.js-price-text').text($(this).val()*$(this).parents('.js-price').find('.js-price-text').data('price'));
 				}
 				$('.js-price-text').map(function(){
 					$(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
