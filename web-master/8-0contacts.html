@@ -1175,17 +1175,26 @@
 				<div class="form__row">
 					<div class="col_50">
 						<label class="field">
-							<span class="field__title star">Фамилия</span>
+							<span class="field__title">ФИО</span>
 							<span class="field__body">
-								<input type="text" class="input" data-validation="required" autocomplete="off">
+								<input type="text" class="input" autocomplete="off">
 							</span>
 						</label>
 						<label class="field">
-							<span class="field__title star">Отчество</span>
-							<span class="field__body">
-								<input type="text" class="input" data-validation="required" autocomplete="off">
-							</span>
-						</label>
+					<span class="field__title star">Область</span>
+					<span class="field__body">
+						<div class="selects">
+							<select class="multiple-select js-single-select" multiple="multiple"  data-validation="required">
+								<option value="Минск">Минск</option>
+								<option value="Минская область">Минская область</option>								
+								<option value="Брестская область">Брестская область</option>
+								<option value="Витебская область">Витебская область</option>
+								<option value="Гомельская область">Гомельская область</option>
+								<option value="Гродненская область">Гродненская область</option>
+							</select>
+						</div>
+					</span>
+				</label>
 						<label class="field">
 							<span class="field__title star">E-mail</span>
 							<span class="field__body">
@@ -1195,9 +1204,9 @@
 					</div>
 					<div class="col_50">
 						<label class="field">
-							<span class="field__title star">Имя</span>
+							<span class="field__title">Организация</span>
 							<span class="field__body">
-								<input type="text" class="input" data-validation="required" autocomplete="off">
+								<input type="text" class="input" autocomplete="off">
 							</span>
 						</label>
 						<label class="field">
