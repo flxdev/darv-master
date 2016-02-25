@@ -1121,6 +1121,21 @@
 			<div class="popup__title">Обратный звонок</div>
 			<form action="" class="js-validate">
 				<label class="field">
+					<span class="field__title star">Область</span>
+					<span class="field__body">
+						<div class="selects">
+							<select class="multiple-select js-single-select" multiple="multiple"  data-validation="required">
+								<option value="Минск">Минск</option>
+								<option value="Минская область">Минская область</option>								
+								<option value="Брестская область">Брестская область</option>
+								<option value="Витебская область">Витебская область</option>
+								<option value="Гомельская область">Гомельская область</option>
+								<option value="Гродненская область">Гродненская область</option>
+							</select>
+						</div>
+					</span>
+				</label>
+				<label class="field">
 					<span class="field__title star">Телефон</span>
 					<span class="field__body">
 						<input type="phone" name="phone" class="input" data-validation="custom" data-validation-regexp="^[-0-9()+ ]+$">
@@ -1140,9 +1155,7 @@
 			</form>
 			<div class="close__btn js-close"></div>
 		</div>
-	</div>
-	<div class="popup__wrap js-popup" data-popup="success">
-		<div class="popup">
+		<div class="popup success">
 			<div class="popup__title">Спасибо!</div>
 			<p>Наш менеджер свяжется<br> с вами в течении рабочего дня!</p>
 			<a href="" class="blue js-close">Закрыть</a>

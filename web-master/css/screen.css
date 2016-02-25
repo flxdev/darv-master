@@ -2655,13 +2655,13 @@ input.btn {
 .sort__by > span {
     display: inline-block;
 }
-.sort__by button {
+.sort__by a {
     margin-left: 5px;
     padding: 2px 17px 4px 6px;
     position: relative;
     display: inline-block;
 }
-.sort__by button.is-active span::after {
+.sort__by a.is-active span::after {
     border-style: solid;
     border-width: 4px 2.5px 0 2.5px;
     width: 0;
@@ -2673,7 +2673,7 @@ input.btn {
     right: -8px;
     top: 7px;
 }
-.sort__by button.is-active-top span::after {
+.sort__by a.is-active-top span::after {
     border-color: transparent transparent #000 transparent;
     border-style: solid;
     border-width: 0 2.5px 4px 2.5px;
@@ -2685,11 +2685,11 @@ input.btn {
     right: -8px;
     top: 7px;
 }
-.sort__by button.is-active,
-.sort__by button.is-active-top {
+.sort__by a.is-active,
+.sort__by a.is-active-top {
     background: #e9eef2;
 }
-.sort__by button span {
+.sort__by a span {
     display: inline-block;
     color: #0068b3;
     border-bottom: 1px dotted #0068b3;
@@ -2699,14 +2699,14 @@ input.btn {
     transition: color 0.3s ease, border-color 0.3s ease;
     position: relative;
 }
-.sort__by button.is-active span,
-.sort__by button.is-active:hover span,
-.sort__by button.is-active-top span,
-.sort__by button.is-active-top:hover span {
+.sort__by a.is-active span,
+.sort__by a.is-active:hover span,
+.sort__by a.is-active-top span,
+.sort__by a.is-active-top:hover span {
     border-bottom-color: transparent;
-    color: inherit;
+    color: #000;
 }
-.sort__by button:hover span {
+.sort__by a:hover span {
     color: #f28d1e;
     border-color: #f28d1e;
 }
@@ -3637,6 +3637,7 @@ input.btn {
     display: inline-block;
     padding: 15px 0 15px 15px;
     max-width: 63%;
+    width: 100%;
 }
 .point__item .img_box {
     width: 90px;
@@ -4173,7 +4174,7 @@ input.btn {
     padding: 10px 10px 10px 20px;
 }
 .link-back {
-    border: 1px solid #c5c5c5;
+    border: 1px solid #0068b3;
     font-family: 'museosanscyrl_500', Arial, sans-serif;
     min-width: 157px;
     line-height: 28px;
@@ -4191,9 +4192,8 @@ input.btn {
     padding: 0 15px;
 }
 .link-back:hover {
-    border-color: #0068b3;
-    -webkit-box-shadow: 0px 0px 4px rgba(0, 104, 179, 0.5);
-    box-shadow: 0px 0px 4px rgba(0, 104, 179, 0.5);
+    background: #0068b3;
+    color: #fff;
 }
 .link-back:active {
     background: #0068b3;
@@ -4223,7 +4223,7 @@ input.btn {
     top: 3px;
     left: 0;
 }
-.link-back:active span:after {
+.link-back:hover span:after {
     border-color: #fff;
 }
 .sliders {
@@ -4367,6 +4367,18 @@ input.btn {
 }
 .table__basket .item:nth-child(3){
     width: 39%;
+}
+.basket_items .table__basket .item:nth-child(3){
+    padding-right: 20px;
+}
+.basket_items .table__basket .item {
+    position: relative;
+}
+.basket_items .table__basket .item:nth-child(3) {
+    position: absolute;
+    top: 50%;
+    right: -4px;
+    margin-top: -9px;
 }
 .table__basket .item > span:last-child {
     float: right;
@@ -4739,7 +4751,10 @@ i.star {
     opacity: 0.7;
     line-height: 1.9;
 }
-
+.right__sidebar .data {
+    display: inline-block;
+    width: 100%;
+}
 .case .question {
     margin-top: 0px;
     padding: 49px 0;
@@ -5041,6 +5056,19 @@ i.star {
 .orders .table__basket .item:nth-of-type(3) {
     width: 57.6%;
 }
+.orders .table__basket-top .item:nth-of-type(3) {
+    padding-left: 42px;
+}
+@media screen and (max-width: 1366px){
+    .orders .table__basket-top .item:nth-of-type(3) {
+        padding-left: 33px;
+    }
+}
+@media screen and (max-width: 1279px){
+    .orders .table__basket-top .item:nth-of-type(3) {
+        padding-left: 13px;
+    }
+}
 .accordion__item {
     position: relative;
     z-index: 5;
@@ -5254,12 +5282,17 @@ hr {
     border-color: #e9eef2;
     height: 34px;
 }
-.form .multiple-select .ms-choice.is-active, .form .multiple-select .ms-choice:hover {
+.form .multiple-select .ms-choice.is-active, .form .multiple-select .ms-choice:hover,
+.popup__wrap .multiple-select .ms-choice.is-active, .popup__wrap .multiple-select .ms-choice:hover {
     -webkit-border-radius: 0;
     border-radius: 0;
 }
-.form .multiple-select .ms-drop.bottom label {
+.form .multiple-select .ms-drop.bottom label,
+.popup__wrap .multiple-select .ms-drop.bottom label {
     padding: 6px 30px 6px 9px;
+}
+.popup__wrap .multiple-select .ms-drop.bottom label {
+    font-size: 14px;
 }
 .redit .form .field .input {
     border-color: #e9eef2;
@@ -5947,4 +5980,15 @@ a.scheme.gm:hover .icon_svg_orange {
     .error_text {
         width: 100%;
     }
+}
+
+.popup__wrap .selects {
+    width: 100%;
+}
+.popup__wrap .ms-choice {
+    border-color: #e9eef2;
+    border-radius: 0;
+    height: 34px;
+    background-color: #e9eef2;
+    font-family: "museosanscyrl_500",Arial,sans-serif;
 }

@@ -266,7 +266,7 @@ $(document).ready(function () {
 		form_validate.each(function () {
 			var form_this = $(this);
 			$.validate({
-				modules : 'security',
+				//modules : 'security',
 				form : form_this,
 				borderColorOnError : true,
 				scrollToTopOnError : false,
@@ -278,19 +278,25 @@ $(document).ready(function () {
 					}else {
 						$('.ms-choice').css('border-color', "#fd8787");
 						$('.ms-drop').parents('.field__body').addClass('has-error').removeClass('has-success');
-					}
+					}				
+				},
+				onSuccess: function($form){
+					// if($form.hasClass("ajax-post")){
+					// 	ajax_send($form);
+					// }
+					
 					$('.popup').removeClass('is-open');
 					setTimeout(function(){
 						$('.popup.success').addClass('is-open');
 						$('.popup').find('form').trigger('reset');
-					},500)
-					
-					
-				},
-				onSuccess: function($form){
-					if(!$('.selects').parents('.field__body').hasClass('has-success')){
-						return false
+					},500);
+
+					if($('.selects').length){
+						if(!$('.selects').parents('.field__body').hasClass('has-success')){
+							return false
+						}
 					}
+					return false;
 				}
 			});
 		});
@@ -548,6 +554,7 @@ $(document).ready(function () {
 		$('.js-single-select').multipleSelect({
 			width: '100%',
 			single: true,
+			placeholder: "",
 			onClose: function () {
 				$('.ms-choice').removeClass('is-active');
 				if($('.ms-drop').find('li.selected').length) {
@@ -587,6 +594,9 @@ $(document).ready(function () {
 
 	//filter
 	function initCheck(){
+		$('.js-filter-btn').find('.btn_reset').on('click', function(event){
+			event.stopPropagation();
+		});
 		$('.js-filter-btn').on('click', function(){
 			var this_ = $(this),
 				parent = this_.parents('.js-filter'),
@@ -599,7 +609,6 @@ $(document).ready(function () {
 				filter_container.removeClass('is-open');
 				this_.toggleClass('is-active');
 				$('.'+btn__link).delay(200).fadeOut(400);
-				/*filter_footer.fadeOut(150);*/
 			} else {
 				filter_container.slideUp(400).delay().slideDown(400);
 				if (filter_container.hasClass('is-open')){
@@ -616,128 +625,36 @@ $(document).ready(function () {
 	};
 	initCheck();
 
-
-
-	var obj_check = {};
-	function developer(){
-		$.fn.hasAttr = function(name) {
-		  return this.attr(name) !== undefined;
-		};
-		$('.js-filter-btn').each(function(){
-			var _ = $(this);
-
-			if(_.hasAttr('data-list')) {
-				var dataList = _.data('list').split(';');
-						data = _.data('form-tab'),
-						dafaultName = _.data('default'),
-						input = $(this).parents('.js-filter').find('.' + data).find('input');
-
-
-				input.on('change', function(){
-					var count = $(this).parents('.' + data).find('input:checked').length;
-					if(!count == 0) {
-		        _.addClass('active');
-		      } else {
-		        _.removeClass('active');
-		      }
-		      if(count === 0) {
-		      	_.find('span').text(dafaultName);
-		      } else if(count === 1) {
-		      	_.find('span').text(count + ' ' + dataList[0]);
-		      } else if(count > 1 && count < 5 ) {
-		      	_.find('span').text(count + ' ' + dataList[1]);
-		      } else if(count > 4 ) {
-		      	_.find('span').text(count + ' ' + dataList[2]);
-		      }
-				});
-
-				if($('.' + data).find('input:checked').length > 0) {
-					_.addClass('active');
-					var count = $('.' + data).find('input:checked').length;
-					if(count === 1) {
-		      	_.find('span').text(count + ' ' + dataList[0]);
-		      } else if(count > 1 && count < 5 ) {
-		      	_.find('span').text(count + ' ' + dataList[1]);
-		      } else if(count > 4 ) {
-		      	_.find('span').text(count + ' ' + dataList[2]);
-		      }
-				} else {
-					_.removeClass('active');
-					_.find('span').text(dafaultName);
-				}
-			} else if(_.hasAttr('data-check')) {
-				_.on('click', function(){
-					obj_check = {};
-				});
-				_.each(function(){
-					obj_check = {};
-					var data = $(this).data('form-tab'),
-							dafaultName = _.data('default'),
-							input = $(this).parents('.js-filter').find('.' + data).find('input');
-
-					input.each(function() {
-			      if($(this).is(':checked')) {
-			        var vals = $(this).val();
-			        obj_check[vals] = '';
-			        refreshValue(_);
-			      }
-	    		});
-						
-					input.on('change', function(){
-						//obj_check = {};
-						var count = $(this).parents('.' + data).find('input:checked').length;
-
-						if($(this).is(':checked')){
-							var vals = $(this).val();
-							obj_check[vals] = '';
-							 refreshValue(_);
-						} else {
-							deleteValue($(this).val());
-							refreshValue(_);
-						}
-						if(!count == 0) {
-			        _.addClass('active');
-			      } else {
-			        _.removeClass('active');
-			      }
-					});
-
-					if($('.' + data).find('input:checked').length > 0) {
-						_.addClass('active');
-						//var count = $('.' + data).find('input:checked').length;
-					} else {
-						_.removeClass('active');
-					}
-				});
-			}
-		});
-	};
-	developer();
-
 	function refreshValue(item) {
 		var container = $(item).find('span');
 		var str = '';
-		var valueDefault = $(item).data('default');
+		var valueDefault = $(item).find('span').text();
 
-		for (var name in obj_check) {
+		console.log(arr)
+
+		for (var name in arr) {
 			if (str === '') {
 				str += name;
 			} else {
 				str += ', ' + name;
 			}
 		}
-
-		if (Object.keys(obj_check).length === 0) {
+		
+		if (Object.keys(arr).length === 0) {
 			container[0].innerHTML =  valueDefault;
 		} else {
 			container[0].innerHTML = valueDefault+ ': ' + str;
+			console.log(str)
 		}
 		
 	};
-	//refreshValue($('.js-filter-btn'));
+
 	function deleteValue(vals) {
-		delete obj_check[vals];
+		delete arr[vals];
+
+		console.log(vals)
 	}
+
 
 	$('.js-filter').on('click', function(event){
 		event.stopPropagation();
@@ -747,7 +664,6 @@ $(document).ready(function () {
 		$('.filter__tab .js-tab-item').fadeOut(400);
 		$('.js-filter-btn').removeClass('is-active');
 	})
-
 
 	//slice
 	function ui_slider(){
@@ -810,6 +726,12 @@ $(document).ready(function () {
 					inputFromHidden.val(ui.values[0]);
 					inputTo.val(priceField1);
 					inputToHidden.val(ui.values[1]);
+
+					// if(ui.values[0] !== minVal || ui.values[1] !== maxVal) {
+					// 	slider.parents('.js-filter').find('[data-spin]').addClass('active')
+					// } else {
+					// 	slider.parents('.js-filter').find('[data-spin]').removeClass('active')
+					// }
 				}
 			});
 
@@ -822,32 +744,158 @@ $(document).ready(function () {
 			var priceField1 = formPrice1.split(',', 2)[0];
 			
 			inputFrom.val(priceField);
-			inputTo.val(priceField1);			
+			inputTo.val(priceField1);
+
+
+			// if(slider.slider( "values", 0 ) !== minVal || slider.slider( "values", 1 ) !== maxVal) {
+			// 	slider.parents('.js-filter').find('[data-spin]').addClass('active')
+			// } else {
+			// 	slider.parents('.js-filter').find('[data-spin]').removeClass('active')
+			// }	
 
 		});
 	};
 	ui_slider();
 
+	function developer(){
+		$.fn.hasAttr = function(name) {
+		  return this.attr(name) !== undefined;
+		};
+		$('.js-filter-btn').each(function(){
+			var _ = $(this);
+			var arr = [];
+			if(_.hasAttr('data-list')){
+				var parent = _.parents('.js-filter'),
+						thisText = _.find('span').text(),
+						data = _.data('form-tab'),
+						input = parent.find('.' + data).find('input'),
+						btnR = _.find('.btn_reset');
+				
+				if (thisText === 'Брэнд') {
+					if($('.' + data).find('input:checked').length > 0) {
+						_.addClass('active');
+						var count = $('.' + data).find('input:checked').length;
+						if (count === 0) {
+							_.find('span').text(thisText)
+						} else if (count === 1) {
+							_.find('span').text(count + ' ' + thisText);
+						} else if (count > 1 && count < 5) {
+							_.find('span').text(count + ' ' + thisText + 'а');
+						} else if(count > 4 ){
+							_.find('span').text(count + ' ' + thisText + 'ов');
+						}
+					}
+				} else {
+					input.each(function(){
+						if($(this).is(':checked')) {
+							var vals = $(this).val();
+							arr.push(vals);
+							console.log(arr)
+							_.find('span').text(thisText + ': ' + arr);
+							_.addClass('active');
+						}
+					});
+				} 	
+				btnR.on('click', function(){
+					_.find('span').text(thisText);
+					_.removeClass('active');
+
+				});		
+			} else if(_.hasAttr('data-spin')){
+				var parent = _.parents('.js-filter'),
+					thisText = _.find('span').text(),
+					data = _.data('form-tab'),
+					slider = parent.find('.' + data).find('.js-ui-slider-main'),
+					maxVal = +slider.attr("data-max"),
+					minVal = +slider.attr("data-min"),
+					btnR = _.find('.btn_reset');
+				if(slider.slider( "values", 0 ) !== minVal || slider.slider( "values", 1 ) !== maxVal) {
+					var price = parseInt(slider.slider( "values", 0 ));
+					var formPrice = accounting.formatNumber(price, 3, " ", ",");
+					var priceField = formPrice.split(',', 2)[0];
+
+					var price1 = parseInt(slider.slider( "values", 1 ));
+					var formPrice1 = accounting.formatNumber(price1, 3, " ", ",");
+					var priceField1 = formPrice1.split(',', 2)[0];
+					slider.parents('.js-filter').find('[data-spin]').addClass('active');
+					slider.parents('.js-filter').find('[data-spin]').find('span').text(thisText + ': от ' + priceField + ' до ' + priceField1);
+				} else {
+					slider.parents('.js-filter').find('[data-spin]').removeClass('active')
+				}
+
+				btnR.on('click', function(){
+					slider.parents('.js-filter').find('[data-spin]').removeClass('active');
+					slider.parents('.js-filter').find('[data-spin]').find('span').text(thisText);
+				});
+
+			}					
+		});
+	};
+	developer();
+
+	function specialCase() {
+		var filter__btn = $('.js-filter-btn').find('.btn_reset');
+		filter__btn.each(function(){
+			$(this).on('click', function(){
+				var _ = $(this),
+						parent = _.parent(),
+						parentData = parent.data('form-tab');
+						parent.removeClass('active');
+				if(parent.hasAttr('data-list')){
+					var tab = parent.parents('.js-filter').find('.' + parentData);
+					tab.find('input:checkbox').removeAttr('checked');
+
+				} else if(parent.hasAttr('data-spin')){
+					var slider = $(".js-ui-slider").find(".js-ui-slider-main"),
+						maxVal = slider.attr("data-max"),
+						minVal = slider.attr("data-min");
+					slider.slider( "values", [ minVal, maxVal ] );
+					$(".js-ui-slider").find(".js-input-from-hidden").val(minVal);
+					$(".js-ui-slider").find(".js-input-to-hidden").val(maxVal);
+					var price = parseInt(minVal);
+						var formPrice = accounting.formatNumber(price, 3, " ", ",");
+						var priceField = formPrice.split(',', 2)[0];
+
+						var price1 = parseInt(maxVal);
+						var formPrice1 = accounting.formatNumber(price1, 3, " ", ",");
+						var priceField1 = formPrice1.split(',', 2)[0];
+						
+					$(".js-ui-slider").find(".js-ui-slider-from").val(priceField);
+					$(".js-ui-slider").find(".js-ui-slider-to").val(priceField1);
+				}
+			});
+		});
+	}
+	specialCase();
+
 	$(".js-refresh").on("click",function(){
 		var slider = $(".js-ui-slider").find(".js-ui-slider-main"),
 			maxVal = slider.attr("data-max"),
-			minVal = slider.attr("data-min");
+			minVal = slider.attr("data-min"),
+			btns = $('.js-filter-btn');
+		btns.each(function(){
+			var def = $(this).data('default');
+
+			$(this).find('span').text(def);
+		});
 		slider.slider( "values", [ minVal, maxVal ] );
 		$(".js-ui-slider").find(".js-input-from-hidden").val(minVal);
 		$(".js-ui-slider").find(".js-input-to-hidden").val(maxVal);
 		var price = parseInt(minVal);
-			var formPrice = accounting.formatNumber(price, 3, " ", ",");
-			var priceField = formPrice.split(',', 2)[0];
+		var formPrice = accounting.formatNumber(price, 3, " ", ",");
+		var priceField = formPrice.split(',', 2)[0];
 
-			var price1 = parseInt(maxVal);
-			var formPrice1 = accounting.formatNumber(price1, 3, " ", ",");
-			var priceField1 = formPrice1.split(',', 2)[0];
+		var price1 = parseInt(maxVal);
+		var formPrice1 = accounting.formatNumber(price1, 3, " ", ",");
+		var priceField1 = formPrice1.split(',', 2)[0];
 			
 		$(".js-ui-slider").find(".js-ui-slider-from").val(priceField);
 		$(".js-ui-slider").find(".js-ui-slider-to").val(priceField1);
 		$('input:checkbox').removeAttr('checked');
+		$('.js-filter-btn').removeClass('active');
 		return false;	
 	});
+
 
 
 	//Zoom Gallery
