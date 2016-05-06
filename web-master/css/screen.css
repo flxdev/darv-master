@@ -5992,3 +5992,16 @@ a.scheme.gm:hover .icon_svg_orange {
     background-color: #e9eef2;
     font-family: "museosanscyrl_500",Arial,sans-serif;
 }
+
+.banner {
+    width: 156px;
+    height: 155px;
+    background-image: url(../img/ban.png);
+    text-align: center;
+    padding-top: 18%;
+}
+.banner .count {
+    font-family: 'museosanscyrl_500', Arial, sans-serif;
+    font-size: 36px;
+    color: #fe3232;
+}
