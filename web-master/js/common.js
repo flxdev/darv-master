@@ -1,5 +1,9 @@
 $(document).ready(function () {
 
+	$('.point__item  .order__price').on('click', function(e){
+		e.preventDefault();
+	});
+
 	//summ basket
 	function summItem() {
    var box = $('.table__basket-bottom'),
@@ -270,37 +274,52 @@ $(document).ready(function () {
 				form : form_this,
 				borderColorOnError : true,
 				scrollToTopOnError : false,
-				onValidate: function($form){
-					if($('.ms-drop').find('li.selected').length) {
-						$('.ms-choice').css('border-color', "#e9eef2");
-						$('.ms-drop').parents('.field__body').removeClass('has-error');
-						$('.ms-drop').parents('.field__body').addClass('has-success');
-					}else {
-						$('.ms-choice').css('border-color', "#fd8787");
-						$('.ms-drop').parents('.field__body').addClass('has-error').removeClass('has-success');
-					}				
-				},
 				onSuccess: function($form){
 					// if($form.hasClass("ajax-post")){
 					// 	ajax_send($form);
 					// }
+					var _ = form_this;
+					console.log(_)
+					// if(_.find('li.selected').length) {
+					// 	_.find('.ms-choice').css('border-color', "#e9eef2");
+					// 	_.find('.ms-drop').parents('.field__body').removeClass('has-error');
+					// 	_.find('.ms-drop').parents('.field__body').addClass('has-success');
+					// }else {
+					// 	_.find('.ms-choice').css('border-color', "#fd8787");
+					// 	_.find('.ms-drop').parents('.field__body').addClass('has-error').removeClass('has-success');
+					// }
+
+					if(!_.find('.selects').parents('.field__body').hasClass('has-success')){
+							return false
+					}
 					
 					$('.popup').removeClass('is-open');
 					setTimeout(function(){
 						$('.popup.success').addClass('is-open');
 						$('.popup').find('form').trigger('reset');
-					},500);
+					},500);	
 
-					if($('.selects').length){
-						if(!$('.selects').parents('.field__body').hasClass('has-success')){
-							return false
-						}
+					if(!$form.hasClass("ajax-post")){
+					 	console.log()
+						return false;
 					}
-					return false;
+					//return false;
 				}
 			});
 		});
 	};
+
+	$("[type='submit']").on('click', function(){
+		var _ = $(this).parents(".js-validate");
+		if(_.find('li.selected').length) {
+				_.find('.ms-choice').css('border-color', "#e9eef2");
+				_.find('.ms-drop').parents('.field__body').removeClass('has-error');
+				_.find('.ms-drop').parents('.field__body').addClass('has-success');
+			}else {
+				_.find('.ms-choice').css('border-color', "#fd8787");
+				_.find('.ms-drop').parents('.field__body').addClass('has-error').removeClass('has-success');
+			}
+	});
 
 	//DROP DOWN MENU
 	function dropdown() {
@@ -907,6 +926,10 @@ $(document).ready(function () {
 			maxWidth: 800
 		});
 	}
+	$('.image__cover').fancybox({
+		padding: 0,
+		maxWidth: 800
+	});
 	
 	//SHOW MORE
 
