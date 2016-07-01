@@ -4374,7 +4374,7 @@ input.btn {
 .basket_items .table__basket .item {
     position: relative;
 }
-.basket_items .table__basket .item:nth-child(3) {
+.basket_items .table__basket .item:nth-child(3) .remove {
     position: absolute;
     top: 50%;
     right: -4px;
@@ -5982,6 +5982,10 @@ a.scheme.gm:hover .icon_svg_orange {
     }
 }
 
+.table__basket-bottom .table__basket-row {
+    position: relative;
+}
+
 .popup__wrap .selects {
     width: 100%;
 }
@@ -6004,4 +6008,80 @@ a.scheme.gm:hover .icon_svg_orange {
     font-family: 'museosanscyrl_500', Arial, sans-serif;
     font-size: 36px;
     color: #fe3232;
+}
+
+.item_search-price-old {
+    color: #ababab;
+    font-size: 13px;
+    font-family: "museosanscyrl_300",Arial,sans-serif;
+}
+.item_search-price-old + small {
+    color: #ababab;
+    font-size: 13px;
+    font-family: "museosanscyrl_300",Arial,sans-serif;
+}
+.prices-item {
+    float: left;
+    width: 50%;
+}
+.point__item .price .prices {
+    min-width: 130px;
+}
+.point__item .price .prices-item {
+    width: auto;
+    float: none;
+}
+.point__item .price .prices-item small {
+    display: inline-block;
+    float: none;
+}
+.card__price .prices {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.card__price .prices-item {
+    width: 100%;
+    font-size: 0;
+}
+.card__price .prices-item .item_search-price {
+    font-size: 28px;
+}
+.card__price .prices-item .item_search-price-old + small {
+    font-size: 13px;
+}
+.card__price .t_price {
+    float: left;
+    margin-right: 5px;
+}
+.card__price .overlay {
+    overflow: hidden;
+}
+.order__price .overlay .overlay_item {
+    width: 100%;
+    display: inline-block;
+}
+.card__price .overlay .overlay_item:nth-of-type(2) {
+    font-size: 13px;
+}
+.order__price .total__price {
+    width: 100%;
+}
+.table .order__price .prices-item {
+    width: auto;
+    float: none;
+}
+.table  .prices {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.table .price .prices-item small {
+    display: inline-block;
+    float: none;
+}
+.table__basket-bottom .order__price .prices-item {
+    width: auto;
+    float: none;
+    text-align: right;
 }

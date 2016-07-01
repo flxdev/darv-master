@@ -8,7 +8,9 @@ $(document).ready(function () {
 	function summItem() {
    var box = $('.table__basket-bottom'),
       item = box.find('.js-price-text'),
-      arr = [];
+      item_new = box.find('.js-price-text-new')
+      arr = [],
+      arr_new = [];
 
 	  item.each(function(){
 	    var _ = $(this),
@@ -17,18 +19,37 @@ $(document).ready(function () {
 	        arr.push(parseInt(rep))
 	  });
 
+	  item_new.each(function(){
+	    var _ = $(this),
+	        val_new = _.text(),
+	        rep_new = val_new.replace(/ /g, '');
+	        arr_new.push(parseFloat(rep_new))
+
+	        console.log(arr_new)
+	  });
+
 	   var result = arr.reduce(function(sum, current) {
 	   	//console.log(sum, current)
 	    return sum + current;
 	    
 	  }, 0);
+		var result_new = arr_new.reduce(function(sum_new, current_new) {
+		   	//console.log(sum_new, current_new)
+		    return sum_new + current_new;
+		    
+		  }, 0);
 	  //console.log(arr)
 	  
-	  box.parents('.content').find('.card__basket .item_search-price').text(result);
+	  box.parents('.content').find('.card__basket .item_search-price-old').text(result);
+	  
+	  box.parents('.content').find('.card__basket .item_search-price-old').map(function(){
+	    $(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + ' руб.');
+	  });
+	  box.parents('.content').find('.card__basket .item_search-price').text(result_new.toFixed(2));
 	  
 	  box.parents('.content').find('.card__basket .item_search-price').map(function(){
 	    $(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + ' руб.');
-	  })
+	  });
 	}
 	summItem();
 
@@ -168,19 +189,26 @@ $(document).ready(function () {
 			$(this).find('.js-price-input').on('change', function(){
 				var inVal = $(this).val();
 				if(inVal === '0') {
-					console.log(true)
 					$(this).parents('.js-price').find('.js-price-text').text($(this).parents('.js-price').find('.js-price-text').data('price'));
+					$(this).parents('.js-price').find('.js-price-text-new').text(($(this).parents('.js-price').find('.js-price-text-new').data('price')));
 					
 				} else {
 					$(this).parents('.js-price').find('.js-price-text').text($(this).val()*$(this).parents('.js-price').find('.js-price-text').data('price'));
+					$(this).parents('.js-price').find('.js-price-text-new').text(($(this).val()*$(this).parents('.js-price').find('.js-price-text-new').data('price')).toFixed(2));
 				}
 				$('.js-price-text').map(function(){
+					$(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
+				})
+				$('.js-price-text-new').map(function(){
 					$(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
 				})
 			});
 		});
 		$(window).ready(function() {
 			$('.js-price-text').map(function() {
+				$(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
+			});
+			$('.js-price-text-new').map(function() {
 				$(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
 			});
 		})
@@ -191,7 +219,9 @@ $(document).ready(function () {
 			input = $(this).parent().find('.js-price-input'),
 			box = $(this).parents('.js-price').find('.btn_box'),
 			price = $(this).parents('.js-price').find('.js-price-text'),
-			price_val = $(this).parents('.js-price').find('.js-price-text').data('price');
+			price_val = $(this).parents('.js-price').find('.js-price-text').data('price'),
+			price_new = $(this).parents('.js-price').find('.js-price-text-new'),
+			price_val_new = $(this).parents('.js-price').find('.js-price-text-new').data('price');
 		if (input.val() == 0) {
 			return false
 		} else {
@@ -203,6 +233,10 @@ $(document).ready(function () {
 			//input.trigger('change', function(){
 				price.text(price_val)
 				price.map(function(){
+					$(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
+				});
+				price_new.text(price_val_new)
+				price_new.map(function(){
 					$(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
 				});
 				//$(this).parents('.js-price').find('.js-price-text').text($(this).parents('.js-price').find('.js-price-text').data('price'));
@@ -535,12 +569,18 @@ $(document).ready(function () {
 					/*}*/
 					var add = $(event.target),
 						input = add.find('.js-price-input'),
-						price_val = add.find('.js-price-text').data('price');
-						p_val = add.find('.js-price-text');
+						price_val = add.find('.js-price-text').data('price'),
+						p_val = add.find('.js-price-text'),
+						price_val_new = add.find('.js-price-text-new').data('price');
+						p_val_new = add.find('.js-price-text-new');
 					
 					input.val(0);
 					p_val.html(price_val);
 					p_val.map(function(){
+						$(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
+					});
+					p_val_new.html(price_val_new);
+					p_val_new.map(function(){
 						$(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
 					});
 				}
