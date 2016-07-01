@@ -732,59 +732,59 @@ $(document).ready(function () {
 				inputFromHidden = $(this).find(".js-input-from-hidden"),
 				inputTo = $(this).find(".js-ui-slider-to"),
 				inputToHidden = $(this).find(".js-input-to-hidden"),
-				maxVal = +slider.attr("data-max"),
-				minVal = +slider.attr("data-min"),
-				valFrom = inputFromHidden.val(),
-				valTo = inputToHidden.val(),
+				maxVal = parseFloat(slider.attr("data-max")),
+				minVal = parseFloat(slider.attr("data-min")),
+				valFrom = parseFloat(inputFromHidden.val()).toFixed(2),
+				valTo = parseFloat(inputToHidden.val()).toFixed(2),
 				stepVal = +slider.attr("data-step"),
 				reset = $(this).find('.js-refresh');
-				inputFromHidden.val(minVal);
-				inputToHidden.val(maxVal);
+				inputFromHidden.val(minVal.toFixed(2));
+				inputToHidden.val(maxVal.toFixed(2));
 				setTimeout(function(){
 					$('.ui-slider-handle').first().addClass('first');
 				},100);					
 
 				if (!valFrom) {
-					var valFrom = minVal;
+					var valFrom = minVal.toFixed(2);
 				}
 				if (!valTo) {
-					var valTo = maxVal;
+					var valTo = maxVal.toFixed(2);
 				}
 			slider.slider({
 				range: true,
 				min: minVal,
 				max: maxVal,
-				step: 100,
+				step: 0.01,
 				values: [ valFrom, valTo ],
 				stop: function( event, ui ) {
-					var price = parseInt(ui.values[0]);
-					var formPrice = accounting.formatNumber(price, 3, " ", ",");
+					var price = parseFloat(ui.values[0].toFixed(2));
+					var formPrice = accounting.formatNumber(price, 2, " ", ".");
 					var priceField = formPrice.split(',', 2)[0];
 
-					var price1 = parseInt(ui.values[1]);
-					var formPrice1 = accounting.formatNumber(price1, 3, " ", ",");
+					var price1 = parseFloat(ui.values[1].toFixed(2));
+					var formPrice1 = accounting.formatNumber(price1, 2, " ", ".");
 					var priceField1 = formPrice1.split(',', 2)[0];
 
 
-					inputFrom.val(priceField);
-					inputFromHidden.val(ui.values[0]);
-					inputTo.val(priceField1);
-					inputToHidden.val(ui.values[1]);
+					inputFrom.val(formPrice);
+					inputFromHidden.val(ui.values[0].toFixed(2));
+					inputTo.val(formPrice1);
+					inputToHidden.val(ui.values[1].toFixed(2));
 				},
 				slide: function( event, ui ) {
-					var price = parseInt(ui.values[0]);
-					var formPrice = accounting.formatNumber(price, 3, " ", ",");
+					var price = parseFloat(ui.values[0].toFixed(2));
+					var formPrice = accounting.formatNumber(price, 2, " ", ".");
 					var priceField = formPrice.split(',', 2)[0];
 
-					var price1 = parseInt(ui.values[1]);
-					var formPrice1 = accounting.formatNumber(price1, 3, " ", ",");
+					var price1 = parseFloat(ui.values[1].toFixed(2));
+					var formPrice1 = accounting.formatNumber(price1, 2, " ", ".");
 					var priceField1 = formPrice1.split(',', 2)[0];
 
 
-					inputFrom.val(priceField);
-					inputFromHidden.val(ui.values[0]);
-					inputTo.val(priceField1);
-					inputToHidden.val(ui.values[1]);
+					inputFrom.val(formPrice);
+					inputFromHidden.val(ui.values[0].toFixed(2));
+					inputTo.val(formPrice1);
+					inputToHidden.val(ui.values[1].toFixed(2));
 
 					// if(ui.values[0] !== minVal || ui.values[1] !== maxVal) {
 					// 	slider.parents('.js-filter').find('[data-spin]').addClass('active')
@@ -794,11 +794,11 @@ $(document).ready(function () {
 				}
 			});
 
-			var price = parseInt(slider.slider( "values", 0 ));
+			var price = parseFloat(slider.slider( "values", 0 ));
 			var formPrice = accounting.formatNumber(price, 3, " ", ",");
 			var priceField = formPrice.split(',', 2)[0];
 
-			var price1 = parseInt(slider.slider( "values", 1 ));
+			var price1 = parseFloat(slider.slider( "values", 1 ));
 			var formPrice1 = accounting.formatNumber(price1, 3, " ", ",");
 			var priceField1 = formPrice1.split(',', 2)[0];
 			
