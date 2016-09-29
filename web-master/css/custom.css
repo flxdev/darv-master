@@ -1,0 +1,567 @@
+.ajax-small-basket-menu {
+	display: table-cell;
+	vertical-align: middle;
+}
+.ajax-small-basket-menu .basket {
+	display: inline-block;
+	height: 100%;
+}
+.tabs__container .tab__cont {
+	padding: 0;
+}
+.tabs__container .slider__container {
+	width: 100%;
+}
+/*.tabs__container .slider__container .arrivals {
+	padding: 0;
+}*/
+.tabs__container .slider__container .slick-arrow.slick-prev {
+	right: 59px;
+}
+.tabs__container .slider__container .slick-arrow.slick-next {
+	right: 25px;
+}
+@media screen and (max-width: 1366px) {
+	.tabs__container .slider__container .arrivals .card__item {
+		width: 183px;
+	}
+}
+@media screen and (max-width: 1279px) {
+	.tabs__container .slider__container .arrivals .card__item {
+		width: 173px;
+	}
+	.tabs__container .slider__container .slick-arrow.slick-prev {
+		right: 56px;
+	}
+	.tabs__container .slider__container .slick-arrow.slick-next {
+		right: 22px;
+	}
+	.point__item .overlay__wrap {padding-right:180px;}
+}
+.bx-filter {
+	font-family: "museosanscyrl_300",Arial,sans-serif;
+}
+.scroll__container > p {
+    padding-top: 15px;
+}
+.link-clear {
+	float: right;
+	color: #818181;
+	position: relative;
+	padding-left: 25px;
+	line-height: 28px;
+	-webkit-transition: color 0.3s ease;
+	-moz-transition: color 0.3s ease;
+	-o-transition: color 0.3s ease;
+	transition: color 0.3s ease;
+}
+.link-clear .icon {	
+	position: absolute;
+	left: 0;
+	top: 4px;
+	width: 14px;
+	height: 16px;
+}
+.link-clear .icon:after,
+.link-clear .icon:before {
+	content: '';
+	top: 0;
+	left: 0;
+	width: 14px;
+	height: 16px;
+	position: absolute;
+	-webkit-transition: opacity 0.3s ease;
+	-moz-transition: opacity 0.3s ease;
+	-o-transition: opacity 0.3s ease;
+	transition: opacity 0.3s ease;
+}
+.link-clear .icon:after {
+	background-image: url(/bitrix/templates/darvish/img/icons/remove.png);	
+	opacity: 1;
+}
+.link-clear .icon:before {
+	background-image: url(/bitrix/templates/darvish/img/icons/remove-hover.png);
+	opacity: 0;
+}
+.link-clear:hover {
+	color: #0068b3;
+}
+.link-clear:hover .icon:after {
+	opacity: 0;
+}
+.link-clear:hover .icon:before {
+	opacity: 1;
+}
+.filter__footer .btn__row .btn.filter-save-button[disabled] {
+	opacity: 0.5;
+}
+.catalog__area h4 {
+    padding-left: 20px;
+}
+.popup__wrap .selects {
+    width: 100%;
+}
+.popup__wrap .ms-choice {
+    border-color: #e9eef2;
+    border-radius: 0;
+    height: 34px;
+    background-color: #e9eef2;
+    font-family: "museosanscyrl_500",Arial,sans-serif;
+}
+.popup__wrap .multiple-select .ms-drop.bottom label {
+    padding: 6px 30px 6px 9px;
+	font-size: 16px;
+}
+.popup__wrap[data-popup="feedback"] .popup.success {
+	max-width: 333px;
+}
+.ajax-catalog__area .point__right .order__price {
+	margin-top: 0px;
+}
+.orders .sort__by .js-sorting-item2::after {
+	display: none;
+}
+.orders .sort__by .item:nth-of-type(2) .js-sorting-item2 {
+	padding-left: 12px;
+}
+.orders .sort__by .item:nth-of-type(3) .js-sorting-item2 {
+	padding-left: 9px;
+}
+.point__left {max-width: 60%;}
+.scroll-top {
+	background-color: rgba(255,255,255,.6);
+	-webkit-border-radius: 100%;
+	border-radius: 100%;
+	bottom: -63px;
+	cursor: pointer;
+	display: none;
+	height: 63px;
+	right: 28px;
+	position: fixed;
+	-webkit-transition: background-color 0.3s ease 0s, bottom 0.5s ease 0s;
+	-moz-transition: background-color 0.3s ease 0s, bottom 0.5s ease 0s;
+	-o-transition: background-color 0.3s ease 0s, bottom 0.5s ease 0s;
+	transition: background-color 0.3s ease 0s, bottom 0.5s ease 0s;
+	width: 63px;
+	z-index: 2;
+}
+.scroll-top::after {
+	border-right: 2px solid #0068b3;
+	border-top: 2px solid #0068b3;
+	content: "";
+	height: 14px;
+	left: 50%;
+	margin: -5px 0 0 -7px;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	-webkit-transform-origin: 50% 50% 0;
+	transform-origin: 50% 50% 0;
+	width: 14px;
+}
+.scroll-top:hover {
+	background-color: #fff;
+}
+.scroll-top.is-active {
+	bottom: 28px;
+}
+.scroll-top.is-abs {
+    bottom: 110px;
+}
+.help_url {
+    border-bottom: 1px solid #f28d1e;
+    color: #f28d1e;
+    font-size: 16px;
+    margin-left: 14px;
+    transition: color 0.3s ease 0s, border-color 0.3s ease 0s;
+}
+.help_url:hover {
+    text-decoration: none;
+}
+.footer__nav a, .footer__nav a:nth-child(8), .footer__nav a:nth-child(7), .footer__nav a:nth-child(6) {
+	width: 8%;
+}
+@media screen and (max-width: 1279px) {
+	.footer__nav {
+		table-layout: auto;
+	}
+	.footer__nav a, .footer__nav a:nth-child(8), .footer__nav a:nth-child(7), .footer__nav a:nth-child(6), .footer__nav a:nth-child(2) {
+		width: auto;
+	}
+}
+
+.file_url {
+    float: left;
+    margin-top: 30px;
+    margin-right: 20px;
+    max-width: 250px;
+    margin-bottom: 15px;
+}
+.file_url img {
+    float: left;
+    height: 58px;
+}
+.file_url a {
+    float: left;
+    padding-top: 15px;
+}
+#reg__tab-2 .col_50 {
+	position: relative;
+}
+#reg__tab-2 .field {margin-bottom: 25px;}
+#reg__tab-2 .btn_recovery {
+    bottom: 3px;
+}
+.logo {
+	background: rgba(0, 0, 0, 0) url("../img/svg/logo_white.svg") no-repeat scroll 0 0 / cover;
+}
+.fake__header .logo {
+	background-image: url("../img/svg/logo_blue.svg");
+	width: 191px;
+}
+.box__action {
+    height: 466px;
+    position: relative;
+    z-index: 9;
+}
+.saved {
+	color: #0ba215;
+	font-family: "museosanscyrl_500",Arial,sans-serif;
+	font-size: 20px;
+	font-weight: normal;
+	text-align: center;
+	margin-bottom: 20px;
+	
+}
+.number__minus, .number__plus, .number__input {float: left; display: block;}
+.drop__box {
+	-webkit-transform: translateY(-30px);
+	-moz-transform: translateY(-30px);
+	-o-transform: translateY(-30px);
+	transform: translateY(-30px);
+	opacity: 0;
+	-webkit-transition: transform 0.3s ease, opacity 0.3s ease z-index 0.4s ease;
+	-moz-transition: transform 0.3s ease, opacity 0.3s ease z-index 0.4s ease;
+	-o-transition: transform 0.3s ease, opacity 0.3s ease z-index 0.4s ease;
+	transition: transform 0.3s ease, opacity 0.3s ease, z-index 0.4s ease;
+	z-index: 105;
+}
+.drop__box.active {
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	-o-transform: translateY(0px);
+	transform: translateY(0px);
+	opacity: 1;
+	z-index: 101;
+}
+
+.product.orders {
+	width: 100%;
+}
+.number__input {
+	line-height: normal;
+}
+.number__plus::after {
+	background: rgba(0, 0, 0, 0) url("../img/svg/plus.svg") no-repeat scroll 0 0 / cover ;
+	height: 20px;
+	width: 20px;
+	z-index: 12;
+	opacity: 1;
+	-webkit-transition: opacity 0.3s ease;
+	-moz-transition: opacity 0.3s ease;
+	-o-transition: opacity 0.3s ease;
+	transition: opacity 0.3s ease;
+	background-color: transparent;
+	bottom: auto;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+.number__plus::before {
+	background: rgba(0, 0, 0, 0) url("../img/svg/plus-hover.svg") no-repeat scroll 0 0 / cover ;
+	height: 20px;
+	width: 20px;
+	z-index: 12;
+	opacity: 0;
+	-webkit-transition: opacity 0.3s ease;
+	-moz-transition: opacity 0.3s ease;
+	-o-transition: opacity 0.3s ease;
+	transition: opacity 0.3s ease;
+	background-color: transparent;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+.number__plus:hover::after {
+	opacity: 0;
+	background-color: transparent;
+}
+.number__plus:hover::before {
+	opacity: 1;
+	background-color: transparent;
+}
+
+
+.number__minus::after {
+	background: rgba(0, 0, 0, 0) url("../img/svg/minus.svg") no-repeat scroll 0 0 / cover ;
+	height: 20px;
+	width: 20px;
+	z-index: 12;
+	opacity: 1;
+	-webkit-transition: opacity 0.3s ease;
+	-moz-transition: opacity 0.3s ease;
+	-o-transition: opacity 0.3s ease;
+	transition: opacity 0.3s ease;
+	background-color: transparent;
+	bottom: auto;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+.number__minus::before {
+	background: rgba(0, 0, 0, 0) url("../img/svg/minus-hover.svg") no-repeat scroll 0 0 / cover ;
+	height: 20px;
+	width: 20px;
+	z-index: 12;
+	opacity: 0;
+	-webkit-transition: opacity 0.3s ease;
+	-moz-transition: opacity 0.3s ease;
+	-o-transition: opacity 0.3s ease;
+	transition: opacity 0.3s ease;
+	background-color: transparent;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+.number__minus:hover::after {
+	opacity: 0;
+	background-color: transparent;
+}
+.number__minus:hover::before {
+	opacity: 1;
+	background-color: transparent;
+}
+.el_products li, .point__left .article, .table__cell:nth-child(4) {
+	font-family: "museosanscyrl_500",Arial,sans-serif;
+	color: #000;
+}
+.card__item .title, .point__left .point__info p, .table .table__row-body a {
+	color: #0068b3;
+}
+.product .product__left strong {
+	font-family: "museosanscyrl_500",Arial,sans-serif;
+	color: #1f2428;
+	font-weight: normal;
+	letter-spacing: -0.6px;
+}
+.short__left {
+	text-align: center;
+}
+.short__left img {
+	width: auto;
+	max-width: 100%;
+	max-height: 100%:
+}
+.error__box {
+	width: auto;
+	overflow: hidden;
+}
+.short__box h3 {
+	text-align: left;
+}
+.question {
+	height: auto;
+}
+.point__item .img_box {width:140px; height:140px;}
+
+.image__popup {
+    float: left;
+    width: 120px;
+    height: 100%;
+    margin-right: 20px;
+    padding: 15px 0 15px 15px;
+    position: relative;
+}
+.image__popup .badge {
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+.image__popup .image__cover {
+    width: 100%;
+    height: 120px;
+    display: inline-block;
+    position: relative;
+}
+.image__popup .image__cover.hidden {
+    display: none;
+}
+.image__popup .image__cover .zoom {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 0;
+    bottom: 0;
+    background-image: url(../img/svg/search.svg);
+    z-index: 3;
+}
+.image__popup .image__cover img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.point__item .overlay {
+    overflow: hidden;
+    padding: 15px 15px 15px 0;
+}
+.point__item .overlay .order__price {
+    float: right;
+    position:absolute;
+    top:15px;
+    right:15px;
+}
+.point__item .overlay .order__price .price {
+    font-size: 18px;
+}
+.point__item .overlay__wrap {
+    overflow: hidden;
+    padding-right: 330px;
+}
+.point__item .overlay__wrap .point__info {
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+.point__item .overlay__wrap .point__info p {
+    color: #0068b3;
+    font-family: "museosanscyrl_500",Arial,sans-serif;
+    font-size: 17px;
+    margin-bottom: 5px;
+    -webkit-transition: color 0.3s ease 0s;
+    -moz-transition: color 0.3s ease 0s;
+    -o-transition: color 0.3s ease 0s;
+    transition: color 0.3s ease 0s;
+}
+.point__item .overlay__link:hover p {
+    color: #f28d1e;
+}
+.point__item .point__info > span {
+    font-size: 13px;
+    line-height: 1.4;
+    max-height: 40px;
+    overflow: hidden;
+    display: inline-block;
+    color: #000;
+    margin-bottom: 5px;
+}
+.point__item .article {
+    margin-top: 5px;
+}
+.point__item .article li {
+    margin-bottom: 5px;
+    display: inline-block;
+    width: 100%;
+    font-size: 12px;
+    color: #000;
+}
+.point__item .article li span {
+    color: #000;
+}
+.popup-price_require .txt__space {
+	height: 164px;
+}
+.popup__wrap[data-popup="price"] .popup {
+    max-width: 577px;
+    padding: 40px 36px 63px;
+}
+.popup__wrap[data-popup="price"] .col_50:first-of-type {
+    padding-right: 21px;
+}
+.popup__wrap[data-popup="price"] .col_50:last-of-type {
+    padding-left: 21px;
+}
+.popup__wrap[data-popup="price"] .col_descr {
+    float: none;
+    padding-left: 15px;
+    text-align: left;
+    width: 100%;
+}
+.popup__wrap[data-popup="price"] .form__row:last-of-type::after {
+    width: 100%;
+}
+.popup__wrap[data-popup="price"] .field.field__btn {
+    margin: 6px 0 0;
+}
+.popup__wrap[data-popup="price"] .col_descr .descr {
+    line-height: 1.4;
+    margin: 0;
+    padding: 7px 0 0;
+}
+.fancybox-close {
+	background-image: url("../img/icons/close-popup-inner.png");
+	right: 13px;
+	top: 13px;
+}
+.link-back {
+	border-color: #f28d1e;	
+	-weblit-transition: border-color 0.3s ease 0s, background 0.3s ease 0s;
+	transition: border-color 0.3s ease 0s, background 0.3s ease 0s;
+}
+.link-back span {
+	color: #f28d1e;
+	-weblit-transition: color 0.3s ease 0s;
+	transition: color 0.3s ease 0s;
+}
+.link-back span::after {
+	border-color: #f28d1e;
+}
+.link-back:hover {
+	border-color: #f89930;
+	color: #fff;
+	background: #f89930;
+}
+.link-back:hover span {
+	color: #fff;
+}
+.sort__by a {
+	border-color: transparent;
+}
+.article__block {
+	margin: 50px 0 40px;
+}
+.article__block .article-title {
+	font-family: "museosanscyrl_500",Arial,sans-serif;
+	font-size: 20px;
+	color: #000000;
+	min-width: 30%;
+	line-height: 1.3;
+	float: left;
+	margin-right: 20px;
+	width: 30%;
+}
+.article__block .article-text {
+	overflow: hidden;
+}
+.article__block .article-text p {
+	line-height: 1.8;
+	letter-spacing: 0.3px
+}

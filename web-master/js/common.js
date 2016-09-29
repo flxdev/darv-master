@@ -6,50 +6,50 @@ $(document).ready(function () {
 
 	//summ basket
 	function summItem() {
-   var box = $('.table__basket-bottom'),
-      item = box.find('.js-price-text'),
-      item_new = box.find('.js-price-text-new')
-      arr = [],
-      arr_new = [];
+		var box = $('.table__basket-bottom'),
+			item = box.find('.js-price-text'),
+			item_new = box.find('.js-price-text-new')
+			arr = [],
+			arr_new = [];
 
-	  item.each(function(){
-	    var _ = $(this),
-	        val = _.text(),
-	        rep = val.replace(/ /g, '');
-	        arr.push(parseInt(rep))
-	  });
+			item.each(function(){
+			var _ = $(this),
+			    val = _.text(),
+			    rep = val.replace(/ /g, '');
+			    arr.push(parseInt(rep))
+			});
 
-	  item_new.each(function(){
-	    var _ = $(this),
-	        val_new = _.text(),
-	        rep_new = val_new.replace(/ /g, '');
-	        arr_new.push(parseFloat(rep_new))
+			item_new.each(function(){
+			var _ = $(this),
+			    val_new = _.text(),
+			    rep_new = val_new.replace(/ /g, '');
+			    arr_new.push(parseFloat(rep_new))
 
-	        console.log(arr_new)
-	  });
+			    console.log(arr_new)
+			});
 
-	   var result = arr.reduce(function(sum, current) {
-	   	//console.log(sum, current)
-	    return sum + current;
-	    
-	  }, 0);
-		var result_new = arr_new.reduce(function(sum_new, current_new) {
-		   	//console.log(sum_new, current_new)
-		    return sum_new + current_new;
-		    
-		  }, 0);
-	  //console.log(arr)
-	  
-	  box.parents('.content').find('.card__basket .item_search-price-old').text(result);
-	  
-	  box.parents('.content').find('.card__basket .item_search-price-old').map(function(){
-	    $(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + ' руб.');
-	  });
-	  box.parents('.content').find('.card__basket .item_search-price').text(result_new.toFixed(2));
-	  
-	  box.parents('.content').find('.card__basket .item_search-price').map(function(){
-	    $(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + ' руб.');
-	  });
+			var result = arr.reduce(function(sum, current) {
+				//console.log(sum, current)
+			return sum + current;
+
+			}, 0);
+			var result_new = arr_new.reduce(function(sum_new, current_new) {
+			   	//console.log(sum_new, current_new)
+			    return sum_new + current_new;
+			    
+			  }, 0);
+			//console.log(arr)
+
+			box.parents('.content').find('.card__basket .item_search-price-old').text(result);
+
+			box.parents('.content').find('.card__basket .item_search-price-old').map(function(){
+			$(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + ' руб.');
+			});
+			box.parents('.content').find('.card__basket .item_search-price').text(result_new.toFixed(2));
+
+			box.parents('.content').find('.card__basket .item_search-price').map(function(){
+			$(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + ' руб.');
+		});
 	}
 	summItem();
 
@@ -65,7 +65,7 @@ $(document).ready(function () {
 	});
 
 	//auto height
-	 //$('.items .card__item').equalHeight();
+	$('.items .card__item').equalHeight();
 	$('.js-slider, .js-slider-arrivals').on('init', function(){
 		setTimeout(function(){
 			$('.items .card__item').equalHeight();
@@ -185,33 +185,33 @@ $(document).ready(function () {
 
 	//price
 
-		$('.js-price').each(function(){			
-			$(this).find('.js-price-input').on('change', function(){
-				var inVal = $(this).val();
-				if(inVal === '0') {
-					$(this).parents('.js-price').find('.js-price-text').text($(this).parents('.js-price').find('.js-price-text').data('price'));
-					$(this).parents('.js-price').find('.js-price-text-new').text(($(this).parents('.js-price').find('.js-price-text-new').data('price')));
-					
-				} else {
-					$(this).parents('.js-price').find('.js-price-text').text($(this).val()*$(this).parents('.js-price').find('.js-price-text').data('price'));
-					$(this).parents('.js-price').find('.js-price-text-new').text(($(this).val()*$(this).parents('.js-price').find('.js-price-text-new').data('price')).toFixed(2));
-				}
-				$('.js-price-text').map(function(){
-					$(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
-				})
-				$('.js-price-text-new').map(function(){
-					$(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
-				})
-			});
+	$('.js-price').each(function(){
+		$(this).find('.js-price-input').on('change', function(){
+			var inVal = $(this).val();
+			if(inVal === '0') {
+				$(this).parents('.js-price').find('.js-price-text').text($(this).parents('.js-price').find('.js-price-text').data('price'));
+				$(this).parents('.js-price').find('.js-price-text-new').text(($(this).parents('.js-price').find('.js-price-text-new').data('price')));
+				
+			} else {
+				$(this).parents('.js-price').find('.js-price-text').text($(this).val()*$(this).parents('.js-price').find('.js-price-text').data('price'));
+				$(this).parents('.js-price').find('.js-price-text-new').text(($(this).val()*$(this).parents('.js-price').find('.js-price-text-new').data('price')).toFixed(2));
+			}
+			$('.js-price-text').map(function(){
+				$(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
+			})
+			$('.js-price-text-new').map(function(){
+				$(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
+			})
 		});
-		$(window).ready(function() {
-			$('.js-price-text').map(function() {
-				$(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
-			});
-			$('.js-price-text-new').map(function() {
-				$(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
-			});
-		})
+	});
+	$(window).ready(function() {
+		$('.js-price-text').map(function() {
+			$(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
+		});
+		$('.js-price-text-new').map(function() {
+			$(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
+		});
+	})
 
 	//add to card
 	$('.js-add').on('click', function(){
@@ -734,15 +734,17 @@ $(document).ready(function () {
 				inputToHidden = $(this).find(".js-input-to-hidden"),
 				maxVal = parseFloat(slider.attr("data-max")),
 				minVal = parseFloat(slider.attr("data-min")),
-				valFrom = parseFloat(inputFromHidden.val()).toFixed(2),
-				valTo = parseFloat(inputToHidden.val()).toFixed(2),
+				valFrom = parseFloat(inputFromHidden.val()),
+				valTo = parseFloat(inputToHidden.val()),
 				stepVal = +slider.attr("data-step"),
 				reset = $(this).find('.js-refresh');
-				inputFromHidden.val(minVal.toFixed(2));
-				inputToHidden.val(maxVal.toFixed(2));
+				// inputFromHidden.val(minVal.toFixed(2));
+				// inputToHidden.val(maxVal.toFixed(2));
 				setTimeout(function(){
 					$('.ui-slider-handle').first().addClass('first');
-				},100);					
+				},100);	
+
+				console.log(valFrom,valTo )	
 
 				if (!valFrom) {
 					var valFrom = minVal.toFixed(2);
@@ -759,11 +761,11 @@ $(document).ready(function () {
 				stop: function( event, ui ) {
 					var price = parseFloat(ui.values[0].toFixed(2));
 					var formPrice = accounting.formatNumber(price, 2, " ", ".");
-					var priceField = formPrice.split(',', 2)[0];
+					//var priceField = formPrice.split(',', 2)[0];
 
 					var price1 = parseFloat(ui.values[1].toFixed(2));
 					var formPrice1 = accounting.formatNumber(price1, 2, " ", ".");
-					var priceField1 = formPrice1.split(',', 2)[0];
+					//var priceField1 = formPrice1.split(',', 2)[0];
 
 
 					inputFrom.val(formPrice);
@@ -774,11 +776,11 @@ $(document).ready(function () {
 				slide: function( event, ui ) {
 					var price = parseFloat(ui.values[0].toFixed(2));
 					var formPrice = accounting.formatNumber(price, 2, " ", ".");
-					var priceField = formPrice.split(',', 2)[0];
+					//var priceField = formPrice.split(',', 2)[0];
 
 					var price1 = parseFloat(ui.values[1].toFixed(2));
 					var formPrice1 = accounting.formatNumber(price1, 2, " ", ".");
-					var priceField1 = formPrice1.split(',', 2)[0];
+					//var priceField1 = formPrice1.split(',', 2)[0];
 
 
 					inputFrom.val(formPrice);
@@ -795,15 +797,16 @@ $(document).ready(function () {
 			});
 
 			var price = parseFloat(slider.slider( "values", 0 ));
-			var formPrice = accounting.formatNumber(price, 3, " ", ",");
-			var priceField = formPrice.split(',', 2)[0];
+			var formPrice = accounting.formatNumber(price, 2, " ", ".");
+			// var priceField = formPrice.split(',', 2)[0];
 
 			var price1 = parseFloat(slider.slider( "values", 1 ));
-			var formPrice1 = accounting.formatNumber(price1, 3, " ", ",");
-			var priceField1 = formPrice1.split(',', 2)[0];
+			var formPrice1 = accounting.formatNumber(price1, 2, " ", ".");
+			// var priceField1 = formPrice1.split(',', 2)[0];
 			
-			inputFrom.val(priceField);
-			inputTo.val(priceField1);
+			inputFrom.val(formPrice);
+			inputTo.val(formPrice1);
+			console.log(formPrice1)
 
 
 			// if(slider.slider( "values", 0 ) !== minVal || slider.slider( "values", 1 ) !== maxVal) {
@@ -849,7 +852,6 @@ $(document).ready(function () {
 						if($(this).is(':checked')) {
 							var vals = $(this).val();
 							arr.push(vals);
-							console.log(arr)
 							_.find('span').text(thisText + ': ' + arr);
 							_.addClass('active');
 						}
@@ -865,19 +867,22 @@ $(document).ready(function () {
 					thisText = _.find('span').text(),
 					data = _.data('form-tab'),
 					slider = parent.find('.' + data).find('.js-ui-slider-main'),
-					maxVal = +slider.attr("data-max"),
-					minVal = +slider.attr("data-min"),
+					maxVal = parseFloat(slider.attr("data-max")),
+					minVal = parseFloat(slider.attr("data-min")),
 					btnR = _.find('.btn_reset');
-				if(slider.slider( "values", 0 ) !== minVal || slider.slider( "values", 1 ) !== maxVal) {
-					var price = parseInt(slider.slider( "values", 0 ));
-					var formPrice = accounting.formatNumber(price, 3, " ", ",");
-					var priceField = formPrice.split(',', 2)[0];
 
-					var price1 = parseInt(slider.slider( "values", 1 ));
-					var formPrice1 = accounting.formatNumber(price1, 3, " ", ",");
-					var priceField1 = formPrice1.split(',', 2)[0];
+				console.log(slider.slider( "values", 0 ), minVal)
+				// console.log(slider.slider( "values", 1 ), maxVal)
+				if(slider.slider( "values", 0 ) !== minVal || slider.slider( "values", 1 ) !== maxVal) {
+					var price = parseFloat(slider.slider( "values", 0 ));
+					var formPrice = accounting.formatNumber(price, 2, " ", ".");
+					// var priceField = formPrice.split(',', 2)[0];
+
+					var price1 = parseFloat(slider.slider( "values", 1 ));
+					var formPrice1 = accounting.formatNumber(price1, 2, " ", ".");
+					// var priceField1 = formPrice1.split(',', 2)[0];
 					slider.parents('.js-filter').find('[data-spin]').addClass('active');
-					slider.parents('.js-filter').find('[data-spin]').find('span').text(thisText + ': от ' + priceField + ' до ' + priceField1);
+					slider.parents('.js-filter').find('[data-spin]').find('span').text(thisText + ': от ' + formPrice + ' до ' + formPrice1 + ' руб.');
 				} else {
 					slider.parents('.js-filter').find('[data-spin]').removeClass('active')
 				}
@@ -929,8 +934,8 @@ $(document).ready(function () {
 
 	$(".js-refresh").on("click",function(){
 		var slider = $(".js-ui-slider").find(".js-ui-slider-main"),
-			maxVal = slider.attr("data-max"),
-			minVal = slider.attr("data-min"),
+			maxVal = parseFloat(slider.attr("data-max")),
+			minVal = parseFloat(slider.attr("data-min")),
 			btns = $('.js-filter-btn');
 		btns.each(function(){
 			var def = $(this).data('default');
