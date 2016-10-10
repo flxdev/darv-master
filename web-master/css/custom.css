@@ -432,7 +432,7 @@
 }
 .point__item .overlay {
     overflow: hidden;
-    padding: 15px 15px 15px 0;
+    padding: 15px 15px 5px 0;
 }
 .point__item .overlay .order__price {
     float: right;
@@ -564,4 +564,7 @@
 .article__block .article-text p {
 	line-height: 1.8;
 	letter-spacing: 0.3px
+}
+.point__item .breadcrumbs {
+	margin: 0 0 15px 135px;
 }
