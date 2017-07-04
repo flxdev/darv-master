@@ -957,28 +957,127 @@ a.orange:active .baskets {
 }
 .copyright {
     color: rgba(255,255,255,0.7);
-    margin: 7px 0 0 56px;
+    margin: 7px 0 0 0px;
     letter-spacing: 0.4px;
     float: left;
 }
+// старые стили
+
+// .copyright {
+//     color: rgba(255,255,255,0.7);
+//     margin: 7px 0 0 56px;
+//     letter-spacing: 0.4px;
+//     float: left;
+// }
+// .contacts {
+//     display: inline-block;
+//     vertical-align: top;
+//     float: left;
+//     position: relative;
+//     margin-left: 154px;
+// }
+// .contacts a {
+//     position: relative;
+// }
+// .contacts a::after {
+//     content: '';
+//     position: absolute;
+//     left: -14px;
+//     border-left: 1px solid #ffffff;
+//     top: 5px;
+//     bottom: 1px;
+// }
+// .contacts a:first-child::after {
+//     display: none;
+// }
+// .footer__phone {
+//     color: #ffffff;
+//     font-family: "museosanscyrl_500",Arial,sans-serif;
+//     font-size: 20px;
+//     position: relative;
+//     margin-right: 10px;
+// }
+// .footer__mail {
+//     font-size: 16px;
+//     color: #f28d1e;
+//     border-bottom: 1px solid #f28d1e;
+//     margin-left: 14px;
+//     -webkit-transition: color 0.3s ease 0s, border-color 0.3s ease 0s;
+//     -moz-transition: color 0.3s ease 0s, border-color 0.3s ease 0s;
+//     -o-transition: color 0.3s ease 0s, border-color 0.3s ease 0s;
+//     transition: color 0.3s ease 0s, border-color 0.3s ease 0s;
+// }
+// .footer__mail:hover {
+//     border-color: transparent;
+//     color: #ffffff;
+// }
+// .contacts p {
+//     color: rgba(255,255,255,0.7);
+//     padding-top: 13px;
+// }
+// @media screen and (max-width: 1279px){
+//     .copyright {
+//         margin: 7px 0 0 10px;
+//     }
+//     .contacts {
+//         margin-left: 45px;
+//     }
+// }
+// новые идут до медиазапросов
 .contacts {
     display: inline-block;
     vertical-align: top;
     float: left;
+    width: 100%;
     position: relative;
-    margin-left: 154px;
+    // font-size: 0;
 }
 .contacts a {
     position: relative;
+    display: inline-block;
+    // width: 100%;
 }
-.contacts a::after {
+.contacts .copyb {
+    display: inline-block;
+    vertical-align: top;
+    width: 24%;
+}
+.contacts .copy1 {
+    display: inline-block;
+    vertical-align: middle;
+    width: 24%;
+    // padding-left: .5%;
+}
+.contacts .copy3 {
+    width: 20%;
+    padding-left: 6%;
+    position: relative;
+    margin-top: 5px;
+}
+.contacts .copy3:before {
     content: '';
     position: absolute;
-    left: -14px;
-    border-left: 1px solid #ffffff;
-    top: 5px;
-    bottom: 1px;
+    width: 18px;
+    height: 19px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(../img/icons/Instagram.png);
+    left: 16%;
+    top: 0;
 }
+.contacts .copy3 a {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.702);
+  line-height: 1.429;
+  display: inline;
+  box-shadow: 0 -3px 0 0 #0068b3, 0 1px 0 0 rgba(255, 255, 255, 0.702);
+  
+}
+.contacts .copy3 a:hover{
+    box-shadow: none;
+}
+
 .contacts a:first-child::after {
     display: none;
 }
@@ -993,7 +1092,7 @@ a.orange:active .baskets {
     font-size: 16px;
     color: #f28d1e;
     border-bottom: 1px solid #f28d1e;
-    margin-left: 14px;
+    margin-top: 8px;
     -webkit-transition: color 0.3s ease 0s, border-color 0.3s ease 0s;
     -moz-transition: color 0.3s ease 0s, border-color 0.3s ease 0s;
     -o-transition: color 0.3s ease 0s, border-color 0.3s ease 0s;
@@ -1012,7 +1111,7 @@ a.orange:active .baskets {
         margin: 7px 0 0 10px;
     }
     .contacts {
-        margin-left: 45px;
+        margin-left: 0px;
     }
 }
 /*POPUP*/
