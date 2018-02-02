@@ -6,9 +6,11 @@
 	<meta content="no-cache" http-equiv="pragma">
 	<meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
 	<meta content="no-cache" http-equiv="Cache-Control">
-	<title>1-3filter</title>
+	<title>1-2filter</title>
 	<link rel="stylesheet" href="css/screen.css">
 	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/newlist.css">
+	<link rel="stylesheet" href="css/jquery.fancybox.css">
 	<link rel="stylesheet" href="css/jquery.jscrollpane.css">
 </head>
 <body>
@@ -1046,7 +1048,7 @@
 								<li><a href="" class="blue">Бумажно-беловая продукция</a></li>
 								<li class="active">Альбомы для рисования</li>
 							</ul>
-							<h1>Альбомы для рисования</h1>
+							<h1></h1>
 							<div class="row__20">
 								<div class="filter">
 									<div class="filter__row">
@@ -1071,22 +1073,6 @@
 											<div class="shadow__inner"></div>
 										</div>
 										<div class="tab-pills">
-											<div class="download-certificate-wrapper">
-												<a href="#" class="download-certificate">
-													<div class="download-certificate__icon-wrapper">
-														<img src="./img/downl-cert.png" alt=""
-															 class="download-certificate__icon">
-													</div>
-													<div class="download-cerificate__text">
-														<div class="download-certificate__title">
-															Скачать сертификаты
-														</div>
-														<div class="download-certificate__size">
-															Zip 94.0 KB
-														</div>
-													</div>
-												</a>
-											</div>
 											<ul>
 												<li>
 													<a href="" title="">
@@ -1113,7 +1099,7 @@
 													</a>
 													<div class="tooltip">Таблица</div>
 												</li>
-												<li>
+												<li class="active">
 													<a href="" title="">
 														<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16.496px" height="17.005px" viewBox="0 0 16.496 17.005">
 															<g class="icon-tabs-fill">
@@ -1133,7 +1119,7 @@
 													</a>
 													<div class="tooltip">Список</div>
 												</li>
-												<li class="active">
+												<li>
 													<a href="" title="">
 														<svg class="icon-tabs-fill" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9.999px" height="12.998px" viewBox="0 0 9.999 12.998">
 															<path fill-rule="evenodd" clip-rule="evenodd" d="M0,0h9.999v1H0V0z"/>
@@ -1152,14 +1138,14 @@
 										<div class="btn__link">
 											<span>Фильтр:</span>
 											<div class="buttons__list">
-												<div class="js-filter-btn btn_filter" data-form-tab="tab_1">
-													<span>Производитель</span>
+												<div class="js-filter-btn btn_filter active" data-form-tab="tab_1">
+													<span>2 производителя</span>
 													<div class="btn_reset">
 														<i class="icon__reset"></i>
 													</div>
 												</div>
-												<div class="js-filter-btn btn_filter" data-form-tab="tab_2">
-													<span>Стоимость</span>
+												<div class="js-filter-btn btn_filter active" data-form-tab="tab_2">
+													<span>Стоимость: 15 000 200–150 600 000 руб.</span>
 													<div class="btn_reset">
 														<i class="icon__reset"></i>
 													</div>
@@ -1258,7 +1244,7 @@
 																<input class="input js-ui-slider-from" type="text">
 																<div class="filter__row-range">
 																	<div class="filter__range">
-																		<div data-min="0" data-max="100000000" data-step="500" class="range js-ui-slider-main"></div>
+																		<div data-min="0.00" data-max="15000.60" data-step="500" class="range js-ui-slider-main"></div>
 																		<input class="input js-input-from-hidden" type="hidden" value="">
 																		<input class="input js-input-to-hidden" type="hidden" value="">
 																	</div>
@@ -1388,673 +1374,201 @@
 									</div>
 								</div>
 							</div>
-							<div class="catalog__area is-row">
-								<div class="table">
-									<div class="table__row-header">
-										<div class="table__row">
-											<div class="table__cell">Код товара</div>
-											<div class="table__cell">Артикул</div>
-											<div class="table__cell">Наименование</div>
-											<div class="table__cell">Единицы</div>
-											<div class="table__cell">Стоимость</div>
-										</div>
+							<div>
+								<div class="right__sidebar">
+									<div class="case">
+										<img src="img/newspaper.png" height="90" width="124" alt="">
+										<h3>Свежие новости:</h3>
+										<a href="" class="blue">У нас появился новый бренд “Erich Krauser”</a>
+										<span class="data">01.03.2015</span>
 									</div>
-									<div class="table__row-body">
-										<div class="table__row link__box">
-											<div class="table__cell">023762</div>
-											<div class="table__cell">
-												<span>P-WB777-04</span>
-												<div class="badge">
-													<div class="badge_2">Новинка</div>
-													<div class="badge_1">-50%</div>
-												</div>
-											</div>
-											<div class="table__cell">
-												<a href="">Альбом для рисования на скрепке</a>
-											</div>
-											<div class="table__cell">Упаковки, 36 шт.</div>
-											<div class="table__cell">
-												<div class="order__price js-price">
-													<div class="cover">
-														<div class="price">	
-															<div class="prices">
-																<div class="prices-item">
-																	<span class="item_search-price js-price-text-new" data-price="1.02">1.02</span>
-																	<small>руб.</small>
-																</div>
-																<div class="prices-item">
-																	<span class="item_search-price item_search-price-old js-price-text" data-price="10200">10 200</span>
-																	<small>руб.</small>
-																</div>
-															</div>
-															<div class="old_price">
-																
-															</div>
-														</div>
-														<div class="compare">Цены с НДС</div>
-													</div>
-													<div class="btn_box">
-														<div class="btn_box-inner">
-															<div class="spinner">
-																<button class="add_to js-add" type='button'><i class="icon-add"></i></button>
-																<div class="number js-number" data-max-number="999">
-																	<button class="number__minus js-minus-number" type="button"></button>
-																	<input type="text" class="number__input js-price-input" value="0">
-																	<button class="number__plus js-plus-number" type="button"></button>
-																</div>
-															</div>
-															<div class="spinner_add">
-																<button class="btn__success" type="button">
-																	<i class="icon-success"></i>В корзине
-																</button>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="table__row link__box">
-											<div class="table__cell">023762</div>
-											<div class="table__cell">
-												<span>P-WB777-04</span>
-												<div class="badge">
-													<div class="badge_2">Новинка</div>
-													<div class="badge_1">-50%</div>
-												</div>
-											</div>
-											<div class="table__cell">
-												<a href="">Альбом для рисования на скрепке “ярко-синее авто” 16 л с зажимама из стали</a>
-											</div>
-											<div class="table__cell">Упаковки, 36 шт.</div>
-											<div class="table__cell">
-												<div class="order__price js-price">
-													<div class="cover">
-														<div class="price">	
-															<span class="item_search-price js-price-text" data-price="1210500">100210500</span>
-															<small>руб.</small>
-															<div class="old_price">
-																
-															</div>
-														</div>
-														<div class="compare">Цены с НДС</div>
-													</div>
-													<div class="btn_box">
-														<div class="btn_box-inner">
-															<div class="spinner">
-																<button class="add_to js-add" type='button'><i class="icon-add"></i></button>
-																<div class="number js-number" data-max-number="999">
-																	<button class="number__minus js-minus-number" type="button"></button>
-																	<input type="text" class="number__input js-price-input" value="0">
-																	<button class="number__plus js-plus-number" type="button"></button>
-																</div>
-															</div>
-															<div class="spinner_add">
-																<button class="btn__success" type="button">
-																	<i class="icon-success"></i>В корзине
-																</button>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="table__row link__box">
-											<div class="table__cell">023762</div>
-											<div class="table__cell">
-												<span>P-WB777-04</span>
-												<div class="badge">
-													<div class="badge_2">Новинка</div>
-													<div class="badge_1">-50%</div>
-												</div>
-											</div>
-											<div class="table__cell">
-												<a href="">Альбом для рисования на скрепке</a>
-											</div>
-											<div class="table__cell">Упаковки, 36 шт.</div>
-											<div class="table__cell">
-												<div class="order__price js-price">
-													<div class="cover">
-														<div class="price">	
-															<span class="item_search-price js-price-text" data-price="1210500">1210500</span>
-															<small>руб.</small>
-															<div class="old_price">
-																
-															</div>
-														</div>
-														<div class="compare">Цены с НДС</div>
-													</div>
-													<div class="btn_box">
-														<div class="btn_box-inner">
-															<div class="spinner">
-																<button class="add_to js-add" type='button'><i class="icon-add"></i></button>
-																<div class="number js-number" data-max-number="999">
-																	<button class="number__minus js-minus-number" type="button"></button>
-																	<input type="text" class="number__input js-price-input" value="0">
-																	<button class="number__plus js-plus-number" type="button"></button>
-																</div>
-															</div>
-															<div class="spinner_add">
-																<button class="btn__success" type="button">
-																	<i class="icon-success"></i>В корзине
-																</button>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="table__row link__box">
-											<div class="table__cell">023762</div>
-											<div class="table__cell">
-												<span>P-WB777-04</span>
-												<div class="badge">
-													<div class="badge_2">Новинка</div>
-													<div class="badge_1">-50%</div>
-												</div>
-											</div>
-											<div class="table__cell">
-												<a href="">Альбом для рисования на скрепке “ярко-синее авто” 16 л с зажимама из стали</a>
-											</div>
-											<div class="table__cell">Упаковки, 36 шт.</div>
-											<div class="table__cell">
-												<div class="order__price js-price">
-													<div class="cover">
-														<div class="price">	
-															<span class="item_search-price js-price-text" data-price="1210500">100210500</span>
-															<small>руб.</small>
-															<div class="old_price">
-																
-															</div>
-														</div>
-														<div class="compare">Цены с НДС</div>
-													</div>
-													<div class="btn_box">
-														<div class="btn_box-inner">
-															<div class="spinner">
-																<button class="add_to js-add" type='button'><i class="icon-add"></i></button>
-																<div class="number js-number" data-max-number="999">
-																	<button class="number__minus js-minus-number" type="button"></button>
-																	<input type="text" class="number__input js-price-input" value="0">
-																	<button class="number__plus js-plus-number" type="button"></button>
-																</div>
-															</div>
-															<div class="spinner_add">
-																<button class="btn__success" type="button">
-																	<i class="icon-success"></i>В корзине
-																</button>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="table__row link__box">
-											<div class="table__cell">023762</div>
-											<div class="table__cell">
-												<span>P-WB777-04</span>
-												<div class="badge">
-													<div class="badge_2">Новинка</div>
-													<div class="badge_1">-50%</div>
-												</div>
-											</div>
-											<div class="table__cell">
-												<a href="">Альбом для рисования на скрепке</a>
-											</div>
-											<div class="table__cell">Упаковки, 36 шт.</div>
-											<div class="table__cell">
-												<div class="order__price js-price">
-													<div class="cover">
-														<div class="price">	
-															<span class="item_search-price js-price-text" data-price="1210500">1210500</span>
-															<small>руб.</small>
-															<div class="old_price">
-																
-															</div>
-														</div>
-														<div class="compare">Цены с НДС</div>
-													</div>
-													<div class="btn_box">
-														<div class="btn_box-inner">
-															<div class="spinner">
-																<button class="add_to js-add" type='button'><i class="icon-add"></i></button>
-																<div class="number js-number" data-max-number="999">
-																	<button class="number__minus js-minus-number" type="button"></button>
-																	<input type="text" class="number__input js-price-input" value="0">
-																	<button class="number__plus js-plus-number" type="button"></button>
-																</div>
-															</div>
-															<div class="spinner_add">
-																<button class="btn__success" type="button">
-																	<i class="icon-success"></i>В корзине
-																</button>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="table__row link__box">
-											<div class="table__cell">023762</div>
-											<div class="table__cell">
-												<span>P-WB777-04</span>
-												<div class="badge">
-													<div class="badge_2">Новинка</div>
-													<div class="badge_1">-50%</div>
-												</div>
-											</div>
-											<div class="table__cell">
-												<a href="">Альбом для рисования на скрепке “ярко-синее авто” 16 л с зажимама из стали</a>
-											</div>
-											<div class="table__cell">Упаковки, 36 шт.</div>
-											<div class="table__cell">
-												<div class="order__price js-price">
-													<div class="cover">
-														<div class="price">	
-															<span class="item_search-price js-price-text" data-price="1210500">100210500</span>
-															<small>руб.</small>
-															<div class="old_price">
-																
-															</div>
-														</div>
-														<div class="compare">Цены с НДС</div>
-													</div>
-													<div class="btn_box">
-														<div class="btn_box-inner">
-															<div class="spinner">
-																<button class="add_to js-add" type='button'><i class="icon-add"></i></button>
-																<div class="number js-number" data-max-number="999">
-																	<button class="number__minus js-minus-number" type="button"></button>
-																	<input type="text" class="number__input js-price-input" value="0">
-																	<button class="number__plus js-plus-number" type="button"></button>
-																</div>
-															</div>
-															<div class="spinner_add">
-																<button class="btn__success" type="button">
-																	<i class="icon-success"></i>В корзине
-																</button>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="table__row link__box">
-											<div class="table__cell">023762</div>
-											<div class="table__cell">
-												<span>P-WB777-04</span>
-												<div class="badge">
-													<div class="badge_2">Новинка</div>
-													<div class="badge_1">-50%</div>
-												</div>
-											</div>
-											<div class="table__cell">
-												<a href="">Альбом для рисования на скрепке</a>
-											</div>
-											<div class="table__cell">Упаковки, 36 шт.</div>
-											<div class="table__cell">
-												<div class="order__price js-price">
-													<div class="cover">
-														<div class="price">	
-															<span class="item_search-price js-price-text" data-price="1210500">1210500</span>
-															<small>руб.</small>
-															<div class="old_price">
-																
-															</div>
-														</div>
-														<div class="compare">Цены с НДС</div>
-													</div>
-													<div class="btn_box">
-														<div class="btn_box-inner">
-															<div class="spinner">
-																<button class="add_to js-add" type='button'><i class="icon-add"></i></button>
-																<div class="number js-number" data-max-number="999">
-																	<button class="number__minus js-minus-number" type="button"></button>
-																	<input type="text" class="number__input js-price-input" value="0">
-																	<button class="number__plus js-plus-number" type="button"></button>
-																</div>
-															</div>
-															<div class="spinner_add">
-																<button class="btn__success" type="button">
-																	<i class="icon-success"></i>В корзине
-																</button>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="table__row link__box">
-											<div class="table__cell">023762</div>
-											<div class="table__cell">
-												<span>P-WB777-04</span>
-												<div class="badge">
-													<div class="badge_2">Новинка</div>
-													<div class="badge_1">-50%</div>
-												</div>
-											</div>
-											<div class="table__cell">
-												<a href="">Альбом для рисования на скрепке “ярко-синее авто” 16 л с зажимама из стали</a>
-											</div>
-											<div class="table__cell">Упаковки, 36 шт.</div>
-											<div class="table__cell">
-												<div class="order__price js-price">
-													<div class="cover">
-														<div class="price">	
-															<span class="item_search-price js-price-text" data-price="1210500">100210500</span>
-															<small>руб.</small>
-															<div class="old_price">
-																
-															</div>
-														</div>
-														<div class="compare">Цены с НДС</div>
-													</div>
-													<div class="btn_box">
-														<div class="btn_box-inner">
-															<div class="spinner">
-																<button class="add_to js-add" type='button'><i class="icon-add"></i></button>
-																<div class="number js-number" data-max-number="999">
-																	<button class="number__minus js-minus-number" type="button"></button>
-																	<input type="text" class="number__input js-price-input" value="0">
-																	<button class="number__plus js-plus-number" type="button"></button>
-																</div>
-															</div>
-															<div class="spinner_add">
-																<button class="btn__success" type="button">
-																	<i class="icon-success"></i>В корзине
-																</button>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="table__row link__box">
-											<div class="table__cell">023762</div>
-											<div class="table__cell">
-												<span>P-WB777-04</span>
-												<div class="badge">
-													<div class="badge_2">Новинка</div>
-													<div class="badge_1">-50%</div>
-												</div>
-											</div>
-											<div class="table__cell">
-												<a href="">Альбом для рисования на скрепке</a>
-											</div>
-											<div class="table__cell">Упаковки, 36 шт.</div>
-											<div class="table__cell">
-												<div class="order__price js-price">
-													<div class="cover">
-														<div class="price">	
-															<span class="item_search-price js-price-text" data-price="1210500">1210500</span>
-															<small>руб.</small>
-															<div class="old_price">
-																
-															</div>
-														</div>
-														<div class="compare">Цены с НДС</div>
-													</div>
-													<div class="btn_box">
-														<div class="btn_box-inner">
-															<div class="spinner">
-																<button class="add_to js-add" type='button'><i class="icon-add"></i></button>
-																<div class="number js-number" data-max-number="999">
-																	<button class="number__minus js-minus-number" type="button"></button>
-																	<input type="text" class="number__input js-price-input" value="0">
-																	<button class="number__plus js-plus-number" type="button"></button>
-																</div>
-															</div>
-															<div class="spinner_add">
-																<button class="btn__success" type="button">
-																	<i class="icon-success"></i>В корзине
-																</button>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="table__row link__box">
-											<div class="table__cell">023762</div>
-											<div class="table__cell">
-												<span>P-WB777-04</span>
-												<div class="badge">
-													<div class="badge_2">Новинка</div>
-													<div class="badge_1">-50%</div>
-												</div>
-											</div>
-											<div class="table__cell">
-												<a href="">Альбом для рисования на скрепке “ярко-синее авто” 16 л с зажимама из стали</a>
-											</div>
-											<div class="table__cell">Упаковки, 36 шт.</div>
-											<div class="table__cell">
-												<div class="order__price js-price">
-													<div class="cover">
-														<div class="price">	
-															<span class="item_search-price js-price-text" data-price="1210500">100210500</span>
-															<small>руб.</small>
-															<div class="old_price">
-																
-															</div>
-														</div>
-														<div class="compare">Цены с НДС</div>
-													</div>
-													<div class="btn_box">
-														<div class="btn_box-inner">
-															<div class="spinner">
-																<button class="add_to js-add" type='button'><i class="icon-add"></i></button>
-																<div class="number js-number" data-max-number="999">
-																	<button class="number__minus js-minus-number" type="button"></button>
-																	<input type="text" class="number__input js-price-input" value="0">
-																	<button class="number__plus js-plus-number" type="button"></button>
-																</div>
-															</div>
-															<div class="spinner_add">
-																<button class="btn__success" type="button">
-																	<i class="icon-success"></i>В корзине
-																</button>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="table__row link__box">
-											<div class="table__cell">023762</div>
-											<div class="table__cell">
-												<span>P-WB777-04</span>
-												<div class="badge">
-													<div class="badge_2">Новинка</div>
-													<div class="badge_1">-50%</div>
-												</div>
-											</div>
-											<div class="table__cell">
-												<a href="">Альбом для рисования на скрепке</a>
-											</div>
-											<div class="table__cell">Упаковки, 36 шт.</div>
-											<div class="table__cell">
-												<div class="order__price js-price">
-													<div class="cover">
-														<div class="price">	
-															<span class="item_search-price js-price-text" data-price="1210500">1210500</span>
-															<small>руб.</small>
-															<div class="old_price">
-																
-															</div>
-														</div>
-														<div class="compare">Цены с НДС</div>
-													</div>
-													<div class="btn_box">
-														<div class="btn_box-inner">
-															<div class="spinner">
-																<button class="add_to js-add" type='button'><i class="icon-add"></i></button>
-																<div class="number js-number" data-max-number="999">
-																	<button class="number__minus js-minus-number" type="button"></button>
-																	<input type="text" class="number__input js-price-input" value="0">
-																	<button class="number__plus js-plus-number" type="button"></button>
-																</div>
-															</div>
-															<div class="spinner_add">
-																<button class="btn__success" type="button">
-																	<i class="icon-success"></i>В корзине
-																</button>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="table__row link__box">
-											<div class="table__cell">023762</div>
-											<div class="table__cell">
-												<span>P-WB777-04</span>
-												<div class="badge">
-													<div class="badge_2">Новинка</div>
-													<div class="badge_1">-50%</div>
-												</div>
-											</div>
-											<div class="table__cell">
-												<a href="">Альбом для рисования на скрепке “ярко-синее авто” 16 л с зажимама из стали</a>
-											</div>
-											<div class="table__cell">Упаковки, 36 шт.</div>
-											<div class="table__cell">
-												<div class="order__price js-price">
-													<div class="cover">
-														<div class="price">	
-															<span class="item_search-price js-price-text" data-price="1210500">100210500</span>
-															<small>руб.</small>
-															<div class="old_price">
-																
-															</div>
-														</div>
-														<div class="compare">Цены с НДС</div>
-													</div>
-													<div class="btn_box">
-														<div class="btn_box-inner">
-															<div class="spinner">
-																<button class="add_to js-add" type='button'><i class="icon-add"></i></button>
-																<div class="number js-number" data-max-number="999">
-																	<button class="number__minus js-minus-number" type="button"></button>
-																	<input type="text" class="number__input js-price-input" value="0">
-																	<button class="number__plus js-plus-number" type="button"></button>
-																</div>
-															</div>
-															<div class="spinner_add">
-																<button class="btn__success" type="button">
-																	<i class="icon-success"></i>В корзине
-																</button>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="table__row link__box">
-											<div class="table__cell">023762</div>
-											<div class="table__cell">
-												<span>P-WB777-04</span>
-												<div class="badge">
-													<div class="badge_2">Новинка</div>
-													<div class="badge_1">-50%</div>
-												</div>
-											</div>
-											<div class="table__cell">
-												<a href="">Альбом для рисования на скрепке</a>
-											</div>
-											<div class="table__cell">Упаковки, 36 шт.</div>
-											<div class="table__cell">
-												<div class="order__price js-price">
-													<div class="cover">
-														<div class="price">	
-															<span class="item_search-price js-price-text" data-price="1210500">1210500</span>
-															<small>руб.</small>
-															<div class="old_price">
-																
-															</div>
-														</div>
-														<div class="compare">Цены с НДС</div>
-													</div>
-													<div class="btn_box">
-														<div class="btn_box-inner">
-															<div class="spinner">
-																<button class="add_to js-add" type='button'><i class="icon-add"></i></button>
-																<div class="number js-number" data-max-number="999">
-																	<button class="number__minus js-minus-number" type="button"></button>
-																	<input type="text" class="number__input js-price-input" value="0">
-																	<button class="number__plus js-plus-number" type="button"></button>
-																</div>
-															</div>
-															<div class="spinner_add">
-																<button class="btn__success" type="button">
-																	<i class="icon-success"></i>В корзине
-																</button>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="table__row link__box">
-											<div class="table__cell">023762</div>
-											<div class="table__cell">
-												<span>P-WB777-04</span>
-												<div class="badge">
-													<div class="badge_2">Новинка</div>
-													<div class="badge_1">-50%</div>
-												</div>
-											</div>
-											<div class="table__cell">
-												<a href="">Альбом для рисования на скрепке “ярко-синее авто” 16 л с зажимама из стали</a>
-											</div>
-											<div class="table__cell">Упаковки, 36 шт.</div>
-											<div class="table__cell">
-												<div class="order__price js-price">
-													<div class="cover">
-														<div class="price">	
-															<span class="item_search-price js-price-text" data-price="1210500">100210500</span>
-															<small>руб.</small>
-															<div class="old_price">
-																
-															</div>
-														</div>
-														<div class="compare">Цены с НДС</div>
-													</div>
-													<div class="btn_box">
-														<div class="btn_box-inner">
-															<div class="spinner">
-																<button class="add_to js-add" type='button'><i class="icon-add"></i></button>
-																<div class="number js-number" data-max-number="999">
-																	<button class="number__minus js-minus-number" type="button"></button>
-																	<input type="text" class="number__input js-price-input" value="0">
-																	<button class="number__plus js-plus-number" type="button"></button>
-																</div>
-															</div>
-															<div class="spinner_add">
-																<button class="btn__success" type="button">
-																	<i class="icon-success"></i>В корзине
-																</button>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
+									<div class="case">
+										<h3>Условия работы:</h3>
+										<ul class="list">
+											<li><a href="" class="blue">Доставка</a></li>
+											<li><a href="" class="blue">Оплата</a></li>
+											<li><a href="" class="blue">Возврат товара</a></li>
+										</ul>
+										<div class="question">
+											<p>Все возникающие вопросы, пожалуйста, адресуйте менеджеру компании “Дарвиш”</p>
+											<div class="phone">+375 29 719-10-77</div>
 										</div>
 									</div>
 								</div>
-								<div class="pagination">
-									<a href="" class="btn__left">
-										<span>Назад</span>
-									</a>
-									<a href="" class="btn__right">
-										<span>Вперед</span>
-									</a>
-									<div class="pagin">
-										<ul>
-											<li><a class="active" href="">1</a></li>
-											<li><a href="">2</a></li>
-											<li><a href="">3</a></li>
-											<li><a href="">4</a></li>
-											<li><a href="">5</a></li>
-										</ul>
+								<div class="certificates articles">
+									<div class="h1">Бумажно-беловая продукция</div>
+									<div class="certificates__box">
+										<div class="certificate-wrapper">
+											<a href="#" class="certificate">
+												<div class="certificate__img-wrapper">
+													<img src="./img/cert.jpg" alt="Certificate" class="certificate__img">
+													<div class="certificate__download-wrapper">
+														<img src="./img/downl.png" alt="download certificate"
+															 class="certificate__download">
+													</div>
+												</div>
+												<div class="certificate__title-wrapper">
+													<div class="certificate__subtitle">Альбомы для рисования</div>
+													<div class="certificate__title">Ru c-cn. aб93.b.01899</div>
+												</div>
+											</a>
+										</div>
+										<div class="certificate-wrapper">
+											<a href="#" class="certificate">
+												<div class="certificate__img-wrapper">
+													<img src="./img/cert.jpg" alt="Certificate" class="certificate__img">
+													<div class="certificate__download-wrapper">
+														<img src="./img/downl.png" alt="download certificate"
+															 class="certificate__download">
+													</div>
+												</div>
+												<div class="certificate__title-wrapper">
+													<div class="certificate__subtitle">Альбомы для рисования</div>
+													<div class="certificate__title">Ru c-cn. aб93.b.01899</div>
+												</div>
+											</a>
+										</div>
+										<div class="certificate-wrapper">
+											<a href="#" class="certificate">
+												<div class="certificate__img-wrapper">
+													<img src="./img/cert.jpg" alt="Certificate" class="certificate__img">
+													<div class="certificate__download-wrapper">
+														<img src="./img/downl.png" alt="download certificate"
+															 class="certificate__download">
+													</div>
+												</div>
+												<div class="certificate__title-wrapper">
+													<div class="certificate__subtitle">Альбомы для рисования</div>
+													<div class="certificate__title">Ru c-cn. aб93.b.01899</div>
+												</div>
+											</a>
+										</div>
+										<div class="certificate-wrapper">
+											<a href="#" class="certificate">
+												<div class="certificate__img-wrapper">
+													<img src="./img/cert.jpg" alt="Certificate" class="certificate__img">
+													<div class="certificate__download-wrapper">
+														<img src="./img/downl.png" alt="download certificate"
+															 class="certificate__download">
+													</div>
+												</div>
+												<div class="certificate__title-wrapper">
+													<div class="certificate__subtitle">Альбомы для рисования</div>
+													<div class="certificate__title">Ru c-cn. aб93.b.01899</div>
+												</div>
+											</a>
+										</div>
+										<div class="certificate-wrapper">
+											<a href="#" class="certificate">
+												<div class="certificate__img-wrapper">
+													<img src="./img/cert.jpg" alt="Certificate" class="certificate__img">
+													<div class="certificate__download-wrapper">
+														<img src="./img/downl.png" alt="download certificate"
+															 class="certificate__download">
+													</div>
+												</div>
+												<div class="certificate__title-wrapper">
+													<div class="certificate__subtitle">Альбомы для рисования</div>
+													<div class="certificate__title">Ru c-cn. aб93.b.01899</div>
+												</div>
+											</a>
+										</div>
+										<div class="certificate-wrapper">
+											<a href="#" class="certificate">
+												<div class="certificate__img-wrapper">
+													<img src="./img/cert.jpg" alt="Certificate" class="certificate__img">
+													<div class="certificate__download-wrapper">
+														<img src="./img/downl.png" alt="download certificate"
+															 class="certificate__download">
+													</div>
+												</div>
+												<div class="certificate__title-wrapper">
+													<div class="certificate__subtitle">Альбомы для рисования</div>
+													<div class="certificate__title">Ru c-cn. aб93.b.01899</div>
+												</div>
+											</a>
+										</div>
+										<div class="certificate-wrapper">
+											<a href="#" class="certificate">
+												<div class="certificate__img-wrapper">
+													<img src="./img/cert.jpg" alt="Certificate" class="certificate__img">
+													<div class="certificate__download-wrapper">
+														<img src="./img/downl.png" alt="download certificate"
+															 class="certificate__download">
+													</div>
+												</div>
+												<div class="certificate__title-wrapper">
+													<div class="certificate__subtitle">Альбомы для рисования</div>
+													<div class="certificate__title">Ru c-cn. aб93.b.01899</div>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="line-divider"></div>
+								<div class="certificates articles">
+									<div class="h1">Бумажно-беловая продукция</div>
+									<div class="certificates__box">
+										<div class="certificate-wrapper">
+											<a href="#" class="certificate">
+												<div class="certificate__img-wrapper">
+													<img src="./img/cert.jpg" alt="Certificate" class="certificate__img">
+													<div class="certificate__download-wrapper">
+														<img src="./img/downl.png" alt="download certificate"
+															 class="certificate__download">
+													</div>
+												</div>
+												<div class="certificate__title-wrapper">
+													<div class="certificate__subtitle">Альбомы для рисования</div>
+													<div class="certificate__title">Ru c-cn. aб93.b.01899</div>
+												</div>
+											</a>
+										</div>
+										<div class="certificate-wrapper">
+											<a href="#" class="certificate">
+												<div class="certificate__img-wrapper">
+													<img src="./img/cert.jpg" alt="Certificate" class="certificate__img">
+													<div class="certificate__download-wrapper">
+														<img src="./img/downl.png" alt="download certificate"
+															 class="certificate__download">
+													</div>
+												</div>
+												<div class="certificate__title-wrapper">
+													<div class="certificate__subtitle">Альбомы для рисования</div>
+													<div class="certificate__title">Ru c-cn. aб93.b.01899</div>
+												</div>
+											</a>
+										</div>
+										<div class="certificate-wrapper">
+											<a href="#" class="certificate">
+												<div class="certificate__img-wrapper">
+													<img src="./img/cert.jpg" alt="Certificate" class="certificate__img">
+													<div class="certificate__download-wrapper">
+														<img src="./img/downl.png" alt="download certificate"
+															 class="certificate__download">
+													</div>
+												</div>
+												<div class="certificate__title-wrapper">
+													<div class="certificate__subtitle">Альбомы для рисования</div>
+													<div class="certificate__title">Ru c-cn. aб93.b.01899</div>
+												</div>
+											</a>
+										</div>
+										<div class="certificate-wrapper">
+											<a href="#" class="certificate">
+												<div class="certificate__img-wrapper">
+													<img src="./img/cert.jpg" alt="Certificate" class="certificate__img">
+													<div class="certificate__download-wrapper">
+														<img src="./img/downl.png" alt="download certificate"
+															 class="certificate__download">
+													</div>
+												</div>
+												<div class="certificate__title-wrapper">
+													<div class="certificate__subtitle">Альбомы для рисования</div>
+													<div class="certificate__title">Ru c-cn. aб93.b.01899</div>
+												</div>
+											</a>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -2143,10 +1657,10 @@
 <script src="js/lib/jquery.sticky.js"></script>
 <script src="js/lib/slick.min.js"></script>
 <script src="js/lib/jquery.multiple.select.js"></script>
-<script src="js/lib/jquery.fancybox.js"></script>
 <script src="js/lib/jquery-ui.min.js"></script>
 <script src="js/lib/accounting.min.js"></script>
 <script src="js/lib/jquery.equalheight.js"></script>
+<script src="js/lib/jquery.fancybox.js"></script>
 <script src="js/common.js"></script>
 </body>
 </html>
