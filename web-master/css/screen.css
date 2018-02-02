@@ -1062,7 +1062,7 @@ a.orange:active .baskets {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    background-image: url(../img/icons/Instagram.png);
+    background-image: url(img/icons/Instagram.png);
     left: 16%;
     top: 0;
 }
@@ -1610,11 +1610,11 @@ input.btn {
 }
 .navigation nav > ul li > a {
     font-family: 'museosanscyrl_500', Arial, sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     color: #0068b3;
     display: table;
     height: 103px;
-    padding: 0 15px 0 27px;
+    padding: 0 10px 0 15px;
     background: #fff;
     -webkit-transition: background 0.3s ease, color 0.3s ease;
     -moz-transition: background 0.3s ease, color 0.3s ease;
@@ -2611,6 +2611,7 @@ input.btn {
     -o-transition: color 0.3s ease;
     transition: color 0.3s ease;
     will-change: color;
+    font-size: 15px;
 }
 .category__all .item .txt_box span {
     -webkit-transition: color 0.3s ease;
