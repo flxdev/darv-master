@@ -234,7 +234,7 @@ a.white:active {
 .logo {
     width: 223px;
     height: 61px;
-    background: url('../img/logo.png') no-repeat;
+    background: url('img/logo.png') no-repeat;
     display: inline-block;
     vertical-align: middle;
     -webkit-background-size: cover;
@@ -374,7 +374,7 @@ a.white:active {
     background: transparent;
 }
 .button__search .icon__search {
-    background: url(../img/icons/icon-search.png) no-repeat;
+    background: url(img/icons/icon-search.png) no-repeat;
     width: 100%;
     height: 100%;
     display: block;
@@ -622,13 +622,13 @@ a.white:active {
     width: 11px;
     height: 9px;
     display: inline-block;
-    background: url(../img/icons/icon-success.png) no-repeat;
+    background: url(img/icons/icon-success.png) no-repeat;
     margin-right: 11px;
 }
 .add_to .icon-add {
     width: 19px;
     height: 17px;
-    background: url(../img/icons/icon-add-to.png) no-repeat;
+    background: url(img/icons/icon-add-to.png) no-repeat;
     display: inline-block;
 }
 .spinner {
@@ -723,7 +723,7 @@ a.orange:active .baskets {
 .btn-reset {
     width: 16px;
     height: 16px;
-    background: url(../img/icons/icon-reset.png) no-repeat;
+    background: url(img/icons/icon-reset.png) no-repeat;
     position: absolute;
     left: -30px;
     top: 13px;
@@ -732,7 +732,7 @@ a.orange:active .baskets {
     cursor: pointer;
 }
 .fake__header .btn-reset {
-    background: url(../img/icons/big-close.png) no-repeat;
+    background: url(img/icons/big-close.png) no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
 }
@@ -932,12 +932,12 @@ a.orange:active .baskets {
     height: 100%;
 }
 .icon_dev::before {
-    background: url(../img/icons/dev-logo.png) no-repeat;
+    background: url(img/icons/dev-logo.png) no-repeat;
     opacity: 1;
     z-index: 2;
 }
 .icon_dev::after {
-    background: url(../img/icons/dev-logo-hover.png) no-repeat;
+    background: url(img/icons/dev-logo-hover.png) no-repeat;
     opacity: 1;
     z-index: 1;
 }
@@ -1062,7 +1062,7 @@ a.orange:active .baskets {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    background-image: url(../img/icons/Instagram.png);
+    background-image: url(img/icons/Instagram.png);
     left: 16%;
     top: 0;
 }
@@ -1183,7 +1183,7 @@ a.orange:active .baskets {
     width: 20px;
     height: 20px;
     position: absolute;
-    background: url(../img/icons/close-popup.png) no-repeat;
+    background: url(img/icons/close-popup.png) no-repeat;
     right: -31px;
     top: -26px;
     cursor: pointer;
@@ -1378,7 +1378,7 @@ input.btn {
     padding: 5px 0;
 }
 .fake__header .logo {
-    background-image: url(../img/logo-inner.jpg);
+    background-image: url(img/logo-inner.jpg);
     width: 188px;
     height: 52px;
 }
@@ -2997,7 +2997,7 @@ input.btn {
     background: rgba(49,120,176,0.1);
 }
 .multiple-select .ms-drop.bottom label::before {
-    background-image: url("../img/icons/checked.png");
+    background-image: url("img/icons/checked.png");
     display: none;
     height: 9px;
     position: absolute;
@@ -3173,7 +3173,7 @@ input.btn {
     content: '';
     width: 8px;
     height: 7px;
-    background-image: url(../img/icons/filter-refresh.png);
+    background-image: url(img/icons/filter-refresh.png);
     position: absolute;
     top: 4px;
     left: 0;
@@ -3243,7 +3243,7 @@ input.btn {
 .checkbox__title::after {
     -webkit-user-select: none;
     -moz-user-select: none;
-    background: rgba(0, 0, 0, 0) url("../img/icons/check.png") no-repeat;
+    background: rgba(0, 0, 0, 0) url("img/icons/check.png") no-repeat;
     content: "";
     display: inline-block;
     height: 9px;
@@ -3996,7 +3996,7 @@ input.btn {
     position: absolute;
     top: 1px;
     left: 0;
-    background-image: url(../img/icons/info.png);
+    background-image: url(img/icons/info.png);
     width: 12px;
     height: 12px;
 }
@@ -4170,7 +4170,7 @@ input.btn {
     position: absolute;
     width: 11px;
     height: 9px;
-    background-image: url(../img/icons/oke.png);
+    background-image: url(img/icons/oke.png);
     left: 8px;
     top: 9px;
 }
@@ -4183,7 +4183,7 @@ input.btn {
     position: absolute;
     width: 14px;
     height: 14px;
-    background-image: url(../img/icons/delivery.png);
+    background-image: url(img/icons/delivery.png);
     left: 5px;
     top: 6px;
 }
@@ -4345,7 +4345,7 @@ input.btn {
 }
 .banner__box .slick-arrow.slick-next {
     right: 0;
-    background-image: url(../img/icons/galery-arr-right.png);
+    background-image: url(img/icons/galery-arr-right.png);
     background-position: 50% 50%;
     background-repeat: no-repeat;
 }
@@ -4353,7 +4353,7 @@ input.btn {
     left: 0;
     right: auto;
     z-index: 2;
-    background-image: url(../img/icons/galery-arr-left.png);
+    background-image: url(img/icons/galery-arr-left.png);
     background-position: 50% 50%;
     background-repeat: no-repeat;
 }
@@ -4417,14 +4417,14 @@ input.btn {
     width: 12px;
     height: 10px;
     position: absolute;
-    background-image: url(../img/icons/success.png);
+    background-image: url(img/icons/success.png);
     top: 4px;
     left: 4px;
 }
 .question {
     width: 100%;
     height: 100%;
-    background-image: url(../img/icons/question.png);
+    background-image: url(img/icons/question.png);
     background-position: 50% 50%;
     background-repeat: no-repeat;
     margin-top: 34px;
@@ -5244,7 +5244,7 @@ i.star {
     width: 14px;
     height: 16px;
     display: inline-block;
-    background-image: url(../img/icons/remove.png);
+    background-image: url(img/icons/remove.png);
 }
 .no-event .price {
     letter-spacing: 0;
@@ -5813,21 +5813,21 @@ a.scheme:active #info {
     left: 0;
 }
 .delivery__icon::before {    
-    background-image: url(../img/icons/delivery-1.png);
+    background-image: url(img/icons/delivery-1.png);
     background-repeat: no-repeat;
     width: 36px;
     height: 25px;
     top: -2px;
 }
 .payment__icon::before {
-    background-image: url(../img/icons/pay.png);
+    background-image: url(img/icons/pay.png);
     background-repeat: no-repeat;
     width: 28px;
     height: 24px;
     top: -2px;
 }
 .return__icon::before {
-    background-image: url(../img/icons/return.png);
+    background-image: url(img/icons/return.png);
     background-repeat: no-repeat;
     width: 38px;
     height: 18px;
@@ -6025,7 +6025,7 @@ a.scheme.gm:hover .icon_svg_orange {
     top: 27px;
 }
 .search__panel #form-main-search .icon__search {
-    background: url(../img/icons/icon-search.png) no-repeat;
+    background: url(img/icons/icon-search.png) no-repeat;
     display: block;
     height: 23px;
     width: 23px;
@@ -6034,7 +6034,7 @@ a.scheme.gm:hover .icon_svg_orange {
     top: 34px;
 }
 .search__panel #form-main-search .btn-reset {
-    background-image: url(../img/icons/big-close.png);
+    background-image: url(img/icons/big-close.png);
     width: 20px;
     height: 20px;
     left: 31px;
@@ -6102,7 +6102,7 @@ a.scheme.gm:hover .icon_svg_orange {
 .banner {
     width: 156px;
     height: 155px;
-    background-image: url(../img/ban.png);
+    background-image: url(img/ban.png);
     text-align: center;
     padding-top: 18%;
 }
